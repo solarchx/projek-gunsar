@@ -1,0 +1,163 @@
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #555555;
+  --accent-color: #3fbbc0;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #444444;
+  --nav-hover-color: #3fbbc0;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --nav-dropdown-hover-color: #3fbbc0;
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+.light-background {
+  --background-color: #f7fcfc;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+.accent-background {
+  --background-color: #3fbbc0;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #65c9cd;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+.sidebar {
+    min-height: 100vh;
+    background-color: #3fbbc0;
+    color: white;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bg-primary-light {
+    background-color: #e3f2fd;
+}
+
+.bg-success-light {
+    background-color: #e8f5e9;
+}
+
+.bg-warning-light {
+    background-color: #fff8e1;
+}
+
+.bg-danger-light {
+    background-color: #ffebee;
+}
+
+.icon {
+    color: #3fbbc0;
+    font-size: 2rem;
+}
+
+.h4 {
+    text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+.animated-services .item-trans {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.animated-services .item-trans:before {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  inset: 100% 0 0 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.animated-services .item-trans .icon {
+  margin-bottom: 10px;
+}
+
+.animated-services .item-trans .icon i {
+  color: var(--accent-color);
+  font-size: 36px;
+  transition: ease-in-out 0.3s;
+}
+
+.animated-services .item-trans h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.animated-services .item-trans h4 a {
+  color: var(--heading-color);
+  transition: ease-in-out 0.3s;
+}
+
+.animated-services .item-trans p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.animated-services .item-trans:hover h4 a,
+.animated-services .item-trans:hover .icon i,
+.animated-services .item-trans:hover p {
+  color: var(--contrast-color);
+}
+
+.animated-services .item-trans:hover:before {
+  background: var(--accent-color);
+  inset: 0;
+  border-radius: 0px;
+}

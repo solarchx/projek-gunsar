@@ -167,7 +167,7 @@
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-tooth icon"></i></div>
-                            <h4><a href="" class="stretched-link">Cabut Gigi</a></h4>
+                            <h4 class=""><a href="" class="stretched-link">Cabut Gigi</a></h4>
                             <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                         </div>
                     </div><!-- End Service Item -->
