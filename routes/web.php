@@ -13,3 +13,7 @@ Route::get('/dokter.php', function () {
 Route::get('/dokterdash.php', function () {
     return view('dokterdash');
 });
+
+Route::get('/profil', function () {
+    return view('profil');
+});

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>gunung sari</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>Puskesmas Gunung Sari</title>
+    <meta name="description" content="Puskesmas Gunung Sari - Melayani masyarakat dengan pelayanan kesehatan terbaik">
+    <meta name="keywords" content="puskesmas, kesehatan, gunung sari, cirebon, pelayanan kesehatan">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -29,14 +29,6 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Medicio
-  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -46,10 +38,10 @@
         <div class="topbar d-flex align-items-center">
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="d-none d-md-flex align-items-center">
-                    <i class="bi bi-clock me-1"></i> Monday - Saturday, 8AM to 10PM
+                    <i class="bi bi-clock me-1"></i> Senin - Sabtu, 08.00 - 20.00 WIB
                 </div>
                 <div class="d-flex align-items-center">
-                    <i class="bi bi-phone me-1"></i> Call us now +62 877-4708-0172
+                    <i class="bi bi-phone me-1"></i> Hubungi kami +62 877-4708-0172
                 </div>
             </div>
         </div><!-- End Top Bar -->
@@ -58,43 +50,29 @@
 
             <div class="container position-relative d-flex align-items-center justify-content-end">
                 <a href="index.php" class="logo d-flex align-items-center me-auto">
-                    <img src="assets/img/logo.png" alt="">
-                    <!-- Uncomment the line below if you also wish o use a text logo -->
-                    <h1 class="sitename">Puskes Gun<span class="sar">Sar</span></h1>
+                    <img src="assets/img/logo.png" alt="Logo Puskesmas Gunung Sari">
+                    <h1 class="sitename">Puskes <span class="sar">GunSar</span></h1>
                 </a>
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="#hero" class="active">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#departments">Departments</a></li>
-                        <li><a href="dokter.php">Doctors</a></li>
-                        <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                        <li><a href="#hero" class="active">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#departments">Poliklinik</a></li>
+                        <li><a href="dokter.php">Dokter</a></li>
+                        <li class="dropdown"><a href="#"><span>Lainnya</span> <i
                                     class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
-                                <li><a href="#">Dropdown 1</a></li>
-                                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                            class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                    <ul>
-                                        <li><a href="#">Deep Dropdown 1</a></li>
-                                        <li><a href="#">Deep Dropdown 2</a></li>
-                                        <li><a href="#">Deep Dropdown 3</a></li>
-                                        <li><a href="#">Deep Dropdown 4</a></li>
-                                        <li><a href="#">Deep Dropdown 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Dropdown 2</a></li>
-                                <li><a href="#">Dropdown 3</a></li>
-                                <li><a href="#">Dropdown 4</a></li>
+                                <li><a href="#">Artikel Kesehatan</a></li>
+                                <li><a href="#">Program Puskesmas</a></li>
+                                <li><a href="#">Info Kesehatan</a></li>
                             </ul>
                         </li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Kontak</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-
-                <a class="cta-btn" href="index.html#appointment">Make an Appointment</a>
 
             </div>
 
@@ -111,35 +89,29 @@
                 data-bs-interval="5000">
 
                 <div class="carousel-item active">
-                    <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
+                    <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="Puskesmas Gunung Sari">
                     <div class="container">
-                        <h2>Welcome to Puskesmas Gunung Sari</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <h2>Selamat Datang di Puskesmas Gunung Sari</h2>
+                        <p>Memberikan pelayanan kesehatan terbaik untuk masyarakat dengan fasilitas lengkap dan tenaga medis profesional.</p>
+                        <a href="#about" class="btn-get-started">Selengkapnya</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
                 <div class="carousel-item">
-                    <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">
+                    <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="Fasilitas Puskesmas">
                     <div class="container">
-                        <h2>Memiliki fasilitas unggul</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id
-                            quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-                            Temporibus autem quibusdam et aut officiis debitis aut.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <h2>Fasilitas Kesehatan Modern</h2>
+                        <p>Puskesmas Gunung Sari dilengkapi dengan peralatan medis modern untuk mendukung pelayanan kesehatan yang optimal.</p>
+                        <a href="#about" class="btn-get-started">Selengkapnya</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
                 <div class="carousel-item">
-                    <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="">
+                    <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="Pelayanan Ramah">
                     <div class="container">
-                        <h2>Pelayanan yang ramah</h2>
-                        <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                            aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                            nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <h2>Pelayanan yang Ramah dan Profesional</h2>
+                        <p>Tim medis kami siap melayani dengan ramah, profesional, dan penuh dedikasi untuk kesehatan masyarakat.</p>
+                        <a href="#about" class="btn-get-started">Selengkapnya</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -167,24 +139,24 @@
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-tooth icon"></i></div>
-                            <h4><a href="" class="stretched-link">Cabut Gigi</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <h4><a href="" class="stretched-link">Kesehatan Gigi</a></h4>
+                            <p>Pelayanan kesehatan gigi dan mulut untuk semua usia dengan dokter gigi profesional</p>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-pills icon"></i></div>
-                            <h4><a href="" class="stretched-link">Farmasi</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            <h4><a href="" class="stretched-link">Apotek</a></h4>
+                            <p>Penyediaan obat-obatan dengan resep dokter dan pelayanan informasi obat</p>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-stethoscope icon"></i></div>
-                            <h4><a href="" class="stretched-link">Pemeriksaan</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            <h4><a href="" class="stretched-link">Pemeriksaan Umum</a></h4>
+                            <p>Pemeriksaan kesehatan umum oleh dokter dengan pelayanan yang komprehensif</p>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -192,7 +164,7 @@
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-microscope icon"></i></div>
                             <h4><a href="" class="stretched-link">Laboratorium</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            <p>Pemeriksaan laboratorium untuk mendukung diagnosis penyakit secara akurat</p>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -209,11 +181,9 @@
                 <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="col-xl-10">
                         <div class="text-center">
-                            <h3>In an emergency? Need help now?</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum.</p>
-                            <a class="cta-btn" href="#appointment">Make an Appointment</a>
+                            <h3>Darurat? Butuh Bantuan Sekarang?</h3>
+                            <p>Untuk keadaan darurat, segera hubungi nomor telepon kami atau datang langsung ke Puskesmas. Tim medis kami siap memberikan pertolongan pertama 24 jam.</p>
+                            <a class="cta-btn" href="#appointment">Daftar Online</a>
                         </div>
                     </div>
                 </div>
@@ -226,38 +196,30 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>About Us<br></h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Tentang Kami</h2>
+                <p>Mengenal lebih dekat Puskesmas Gunung Sari</p>
             </div><!-- End Section Title -->
 
             <div class="container">
 
                 <div class="row gy-4">
                     <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/about.jpg" class="img-fluid" alt="Tentang Puskesmas Gunung Sari">
                         <a href="https://www.youtu.be/lEuSwpvhsMg" class="glightbox pulsating-play-btn"></a>
                     </div>
                     <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <h3>Puskesmas Gunung Sari - Pelayanan Kesehatan Terbaik untuk Masyarakat</h3>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                            Puskesmas Gunung Sari berkomitmen untuk memberikan pelayanan kesehatan yang berkualitas, terjangkau, dan merata bagi seluruh masyarakat.
                         </p>
                         <ul>
-                            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</span></li>
-                            <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in
-                                    voluptate velit.</span></li>
-                            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                    storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                            <li><i class="bi bi-check2-all"></i> <span>Tenaga medis profesional dan berpengalaman</span></li>
+                            <li><i class="bi bi-check2-all"></i> <span>Fasilitas kesehatan lengkap dan modern</span></li>
+                            <li><i class="bi bi-check2-all"></i> <span>Pelayanan ramah, cepat, dan terjangkau</span></li>
+                            <li><i class="bi bi-check2-all"></i> <span>Program kesehatan masyarakat yang komprehensif</span></li>
                         </ul>
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident
+                            Sejak berdiri tahun 1990, Puskesmas Gunung Sari telah menjadi pusat pelayanan kesehatan utama di wilayah Kecamatan Kesambi, Kota Cirebon. Kami terus berinovasi dan meningkatkan kualitas pelayanan untuk memenuhi kebutuhan kesehatan masyarakat.
                         </p>
                     </div>
                 </div>
@@ -277,9 +239,9 @@
                         <div class="stats-item d-flex align-items-center w-100 h-100">
                             <i class="fas fa-user-md flex-shrink-0"></i>
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="1"
+                                <span data-purecounter-start="0" data-purecounter-end="15"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Doctors</p>
+                                <p>Dokter</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -288,31 +250,31 @@
                         <div class="stats-item d-flex align-items-center w-100 h-100">
                             <i class="far fa-hospital flex-shrink-0"></i>
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="4"
+                                <span data-purecounter-start="0" data-purecounter-end="8"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Departments</p>
+                                <p>Poliklinik</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
-                            <i class="fas fa-flask flex-shrink-0"></i>
+                            <i class="fas fa-users flex-shrink-0"></i>
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="2"
+                                <span data-purecounter-start="0" data-purecounter-end="45"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Research Labs</p>
+                                <p>Tenaga Medis</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item d-flex align-items-center w-100 h-100">
-                            <i class="fas fa-award flex-shrink-0"></i>
+                            <i class="fas fa-procedures flex-shrink-0"></i>
                             <div>
-                                <span data-purecounter-start="0" data-purecounter-end="1500"
+                                <span data-purecounter-start="0" data-purecounter-end="500"
                                     data-purecounter-duration="1" class="purecounter"></span>
-                                <p>Awards</p>
+                                <p>Pasien/Hari</p>
                             </div>
                         </div>
                     </div><!-- End Stats Item -->
@@ -330,47 +292,34 @@
 
                 <div class="row justify-content-around gy-4">
                     <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img
-                            src="assets/img/features.jpg" alt=""></div>
+                            src="assets/img/features.jpg" alt="Fasilitas Puskesmas"></div>
 
                     <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up"
                         data-aos-delay="200">
-                        <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed
-                            minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+                        <h3>Keunggulan Puskesmas Gunung Sari</h3>
+                        <p>Puskesmas Gunung Sari memberikan pelayanan kesehatan yang terintegrasi dengan berbagai keunggulan untuk kenyamanan pasien</p>
 
                         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
                             <i class="fa-solid fa-hand-holding-medical flex-shrink-0"></i>
                             <div>
-                                <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-                                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                    occaecati cupiditate non provident</p>
-                            </div>
-                        </div><!-- End Icon Box -->
-
-                        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fa-solid fa-suitcase-medical flex-shrink-0"></i>
-                            <div>
-                                <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                    voluptatum deleniti atque</p>
+                                <h4><a href="" class="stretched-link">Pelayanan 24 Jam</a></h4>
+                                <p>Unit Gawat Darurat kami siap melayani 24 jam untuk keadaan darurat medis</p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
                             <i class="fa-solid fa-staff-snake flex-shrink-0"></i>
                             <div>
-                                <h4><a href="" class="stretched-link">Dine Pad</a></h4>
-                                <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut
-                                    deserunt minus aut eligendi omnis</p>
+                                <h4><a href="" class="stretched-link">Imunisasi</a></h4>
+                                <p>Layanan imunisasi lengkap untuk bayi, anak, dan dewasa</p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
                             <i class="fa-solid fa-lungs flex-shrink-0"></i>
                             <div>
-                                <h4><a href="" class="stretched-link">Tride clov</a></h4>
-                                <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit non
-                                    aspernatur odit amet. Et eligendi</p>
+                                <h4><a href="" class="stretched-link">KIA</a></h4>
+                                <p>Pelayanan Kesehatan Ibu dan Anak dengan tenaga ahli kebidanan</p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -386,8 +335,8 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Services</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Layanan Kami</h2>
+                <p>Berbagai layanan kesehatan yang tersedia di Puskesmas Gunung Sari</p>
             </div><!-- End Section Title -->
 
             <div class="container">
@@ -400,10 +349,9 @@
                                 <i class="fas fa-heartbeat"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Nesciunt Mete</h3>
+                                <h3>Poli Umum</h3>
                             </a>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
+                            <p>Pelayanan kesehatan umum untuk diagnosis dan pengobatan penyakit dengan dokter umum berpengalaman.</p>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -413,10 +361,9 @@
                                 <i class="fas fa-pills"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Eosle Commodi</h3>
+                                <h3>Poli Gigi</h3>
                             </a>
-                            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum
-                                hic non ut nesciunt dolorem.</p>
+                            <p>Layanan kesehatan gigi dan mulut termasuk pemeriksaan, pencabutan, dan penambalan gigi.</p>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -426,10 +373,9 @@
                                 <i class="fas fa-hospital-user"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Ledo Markt</h3>
+                                <h3>KIA/KB</h3>
                             </a>
-                            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id
-                                voluptas adipisci eos earum corrupti.</p>
+                            <p>Pelayanan Kesehatan Ibu dan Anak serta Keluarga Berencana oleh bidan profesional.</p>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -439,10 +385,9 @@
                                 <i class="fas fa-dna"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Asperiores Commodit</h3>
+                                <h3>Laboratorium</h3>
                             </a>
-                            <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga
-                                sit provident adipisci neque.</p>
+                            <p>Pemeriksaan laboratorium untuk mendukung diagnosis penyakit seperti darah, urine, dan feses.</p>
                             <a href="#" class="stretched-link"></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -453,10 +398,9 @@
                                 <i class="fas fa-wheelchair"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Velit Doloremque</h3>
+                                <h3>UGD</h3>
                             </a>
-                            <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed
-                                animi at autem alias eius labore.</p>
+                            <p>Unit Gawat Darurat yang siap melayani 24 jam untuk penanganan kasus kegawatdaruratan.</p>
                             <a href="#" class="stretched-link"></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -467,10 +411,9 @@
                                 <i class="fas fa-notes-medical"></i>
                             </div>
                             <a href="#" class="stretched-link">
-                                <h3>Dolori Architecto</h3>
+                                <h3>Imunisasi</h3>
                             </a>
-                            <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure.
-                                Corrupti recusandae ducimus enim.</p>
+                            <p>Layanan imunisasi dasar dan lanjutan untuk bayi, anak, serta imunisasi dewasa.</p>
                             <a href="#" class="stretched-link"></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -486,8 +429,8 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>MAKE AN APPOINTMENT</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>PENDAFTARAN ONLINE</h2>
+                <p>Daftarkan diri Anda secara online untuk mendapatkan nomor antrian</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -496,48 +439,49 @@
                     <div class="row">
                         <div class="col-md-4 form-group">
                             <input type="text" name="name" class="form-control" id="name"
-                                placeholder="Your Name" required="">
+                                placeholder="Nama Lengkap" required="">
                         </div>
                         <div class="col-md-4 form-group mt-3 mt-md-0">
                             <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Your Email" required="">
+                                placeholder="Email" required="">
                         </div>
                         <div class="col-md-4 form-group mt-3 mt-md-0">
                             <input type="tel" class="form-control" name="phone" id="phone"
-                                placeholder="Your Phone" required="">
+                                placeholder="Nomor HP" required="">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group mt-3">
-                            <input type="datetime-local" name="date" class="form-control datepicker"
-                                id="date" placeholder="Appointment Date" required="">
+                            <input type="date" name="date" class="form-control datepicker"
+                                id="date" placeholder="Tanggal Berobat" required="">
                         </div>
                         <div class="col-md-4 form-group mt-3">
                             <select name="department" id="department" class="form-select" required="">
-                                <option value="">Select Department</option>
-                                <option value="Department 1">Department 1</option>
-                                <option value="Department 2">Department 2</option>
-                                <option value="Department 3">Department 3</option>
+                                <option value="">Pilih Poliklinik</option>
+                                <option value="Poli Umum">Poli Umum</option>
+                                <option value="Poli Gigi">Poli Gigi</option>
+                                <option value="KIA/KB">KIA/KB</option>
+                                <option value="Imunisasi">Imunisasi</option>
                             </select>
                         </div>
                         <div class="col-md-4 form-group mt-3">
                             <select name="doctor" id="doctor" class="form-select" required="">
-                                <option value="">Select Doctor</option>
-                                <option value="Doctor 1">Doctor 1</option>
-                                <option value="Doctor 2">Doctor 2</option>
-                                <option value="Doctor 3">Doctor 3</option>
+                                <option value="">Pilih Dokter</option>
+                                <option value="dr. Ahmad Fauzi">dr. Ahmad Fauzi</option>
+                                <option value="drg. Siti Rahma">drg. Siti Rahma</option>
+                                <option value="dr. Budi Santoso">dr. Budi Santoso</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Keluhan (Opsional)"></textarea>
                     </div>
                     <div class="mt-3">
-                        <div class="loading">Loading</div>
+                        <div class="loading">Memproses</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-                        <div class="text-center"><button type="submit">Make an Appointment</button></div>
+                        <div class="sent-message">Pendaftaran Anda berhasil dikirim. Terima kasih!</div>
+                        <div class="text-center"><button type="submit">Daftar Sekarang</button></div>
                     </div>
                 </form>
 
@@ -550,8 +494,8 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Departments</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Poliklinik</h2>
+                <p>Informasi lengkap tentang poliklinik yang tersedia di Puskesmas kami</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -561,16 +505,16 @@
                         <ul class="nav nav-tabs flex-column">
                             <li class="nav-item">
                                 <a class="nav-link active show" data-bs-toggle="tab"
-                                    href="#tabs-tab-1">Cardiology</a>
+                                    href="#tabs-tab-1">Poli Umum</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Neurology</a>
+                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Poli Gigi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-3">Hepatology</a>
+                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-3">KIA/KB</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-4">Pediatrics</a>
+                                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-4">UGD</a>
                             </li>
 
                         </ul>
@@ -580,65 +524,48 @@
                             <div class="tab-pane active show" id="tabs-tab-1">
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Cardiology</h3>
-                                        <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente
-                                            dila parde sonata raqer a videna mareta paulona marka</p>
-                                        <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint.
-                                            Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est
-                                            repellat minima eveniet eius et quis magni nihil. Consequatur dolorem
-                                            quaerat quos qui similique accusamus nostrum rem vero</p>
+                                        <h3>Poli Umum</h3>
+                                        <p class="fst-italic">Melayani pemeriksaan kesehatan umum dan pengobatan penyakit ringan hingga menengah</p>
+                                        <p>Poli Umum buka setiap hari kerja pukul 08.00-14.00 WIB dengan 3 dokter umum berpengalaman. Pelayanan mencakup konsultasi kesehatan, diagnosis penyakit, resep obat, dan rujukan ke rumah sakit bila diperlukan. Tidak perlu membuat janji terlebih dahulu, cukup datang dan ambil nomor antrian.</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/departments-1.jpg" alt="Poli Umum" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-tab-2">
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Neurology</h3>
-                                        <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente
-                                            dila parde sonata raqer a videna mareta paulona marka</p>
-                                        <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et
-                                            reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et
-                                            velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto
-                                            madirna desera vafle de nideran pal</p>
+                                        <h3>Poli Gigi</h3>
+                                        <p class="fst-italic">Pelayanan kesehatan gigi dan mulut untuk semua usia</p>
+                                        <p>Poli Gigi buka Senin-Jumat pukul 09.00-14.00 WIB dengan 2 dokter gigi. Layanan yang tersedia meliputi pemeriksaan gigi rutin, pencabutan gigi, penambalan, pembersihan karang gigi, dan perawatan saluran akar. Untuk anak-anak, tersedia juga layanan perawatan gigi khusus anak.</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/departments-2.jpg" alt="Poli Gigi" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-tab-3">
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Hepatology</h3>
-                                        <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non
-                                            enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat
-                                            perferendis aut</p>
-                                        <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis
-                                            quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima
-                                            molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam.
-                                            Soluta et harum voluptatem optio quae</p>
+                                        <h3>KIA/KB</h3>
+                                        <p class="fst-italic">Pelayanan Kesehatan Ibu dan Anak serta Keluarga Berencana</p>
+                                        <p>Poli KIA/KB buka setiap hari kerja pukul 08.00-14.00 WIB dengan 4 bidan berpengalaman. Layanan mencakup pemeriksaan kehamilan, persalinan, imunisasi bayi dan anak, konseling KB, serta penyuluhan kesehatan reproduksi. Kami juga menyediakan berbagai alat kontrasepsi.</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/departments-3.jpg" alt="KIA/KB" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-tab-4">
                                 <div class="row">
                                     <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Pediatrics</h3>
-                                        <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure
-                                            voluptas iure porro quis delectus</p>
-                                        <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam
-                                            necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in
-                                            consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam
-                                            quia a laborum inventore</p>
+                                        <h3>UGD</h3>
+                                        <p class="fst-italic">Unit Gawat Darurat 24 Jam</p>
+                                        <p>UGD Puskesmas Gunung Sari siap melayani 24 jam setiap hari untuk penanganan kegawatdaruratan medis. Dilengkapi dengan ambulans dan tenaga medis yang siap siaga. Untuk kasus berat yang memerlukan perawatan intensif, kami akan merujuk ke rumah sakit rujukan.</p>
                                     </div>
                                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                                        <img src="assets/img/departments-4.jpg" alt="UGD" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -655,8 +582,8 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Testimonials</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <h2>Testimoni Pasien</h2>
+                <p>Apa kata mereka tentang pelayanan Puskesmas Gunung Sari</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -691,15 +618,15 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <div class="testimonial-item" "="">
+                            <div class="testimonial-item">
             <p>
               <i class=" bi bi-quote quote-icon-left"></i>
-                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                <span>Pelayanan di Puskesmas Gunung Sari sangat memuaskan. Dokter dan perawatnya ramah, fasilitasnya bersih, dan obat-obatan lengkap. Saya selalu membawa anak saya imunisasi di sini.</span>
                 <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <h3>Budi Santoso</h3>
+                <h4>Warga Pekiringan</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -707,12 +634,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <span>Saya sangat terbantu dengan adanya pendaftaran online. Tidak perlu antri lama, tinggal datang sesuai jam yang sudah ditentukan. Terima kasih Puskesmas Gunung Sari!</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <h3>Siti Aminah</h3>
+                <h4>Ibu Rumah Tangga</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -720,12 +647,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <span>Ketika anak saya demam tinggi di malam hari, UGD Puskesmas Gunung Sari sangat membantu. Petugasnya sigap dan profesional dalam menangani pasien.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <h3>Dewi Lestari</h3>
+                <h4>Warga Kesambi</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -733,12 +660,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                  <span>Sebagai peserta BPJS, saya sangat puas dengan pelayanan di sini. Prosesnya mudah dan tidak dipersulit. Dokternya juga telaten dalam memeriksa.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
+                <h3>Rudi Hartono</h3>
+                <h4>Karyawan Swasta</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -746,12 +673,12 @@
               <div class="testimonial-item">
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                  <span>Puskesmas ini sangat bersih dan nyaman. Saya rutin memeriksakan kehamilan di sini dan selalu mendapat pelayanan yang memuaskan dari bidannya.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
+                <h3>Anita Wijaya</h3>
+                <h4>Ibu Hamil</h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -768,8 +695,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Galeri</h2>
+        <p>Kegiatan dan fasilitas Puskesmas Gunung Sari</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -806,14 +733,14 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="Gedung Puskesmas"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="Poli Umum"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="Poli Gigi"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="Kegiatan Posyandu"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="Imunisasi"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="Penyuluhan Kesehatan"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="Tenaga Medis"></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt="Fasilitas UGD"></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -827,8 +754,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Kontak Kami</h2>
+        <p>Hubungi kami untuk informasi lebih lanjut</p>
       </div><!-- End Section Title -->
 
       <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
@@ -844,7 +771,7 @@
               <div class="col-lg-12">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
+                  <h3>Alamat</h3>
                   <p>Jl. Tentara Pelajar No. 75, Pekiringan, Kec. Kesambi, Kota Cirebon, Jawa Barat 45131</p>
                 </div>
               </div><!-- End Info Item -->
@@ -852,7 +779,7 @@
               <div class="col-md-6">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
+                  <h3>Telepon</h3>
                   <p>+62 877-4708-0172</p>
                 </div>
               </div><!-- End Info Item -->
@@ -860,8 +787,8 @@
               <div class="col-md-6">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <h3>Email</h3>
+                  <p>info@puskesgunungsari.id</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -889,24 +816,55 @@
           <div class="footer-contact pt-3">
             <p>Jl. Tentara Pelajar No. 75</p>
             <p>Pekiringan, Kec. Kesambi, Kota Cirebon, Jawa Barat 45131</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+62 877-4708-0172</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p class="mt-3"><strong>Telepon:</strong> <span>+62 877-4708-0172</span></p>
+            <p><strong>Email:</strong> <span>info@puskesgunungsari.id</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href=""><i class="bi bi-youtube"></i></a>
           </div>
         </div>
 
-        
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Tautan Cepat</h4>
+          <ul>
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#departments">Poliklinik</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Layanan Kami</h4>
+          <ul>
+            <li><a href="#">Poli Umum</a></li>
+            <li><a href="#">Poli Gigi</a></li>
+            <li><a href="#">KIA/KB</a></li>
+            <li><a href="#">Imunisasi</a></li>
+            <li><a href="#">Laboratorium</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Buletin Kesehatan</h4>
+          <p>Dapatkan informasi terbaru tentang kesehatan dan program Puskesmas melalui email Anda</p>
+          <form action="" method="post">
+            <input type="email" name="email" placeholder="Alamat Email Anda"><input type="submit" value="Berlangganan">
+          </form>
+        </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medicio</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Puskesmas Gunung Sari</strong> <span>2024. All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="#">Tim IT Puskesmas Gunung Sari</a>
+      </div>
     </div>
 
   </footer>
@@ -929,5 +887,4 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
