@@ -5,52 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Puskesmas</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/dokterdash.css" rel="stylesheet">
+
     <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .sidebar {
-            min-height: 100vh;
-            background-color: #3fbbc0;
-            color: white;
-        }
 
-        .sidebar .nav-link {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .sidebar .nav-link:hover {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar .nav-link.active {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .bg-primary-light {
-            background-color: #e3f2fd;
-        }
-
-        .bg-success-light {
-            background-color: #e8f5e9;
-        }
-
-        .bg-warning-light {
-            background-color: #fff8e1;
-        }
-
-        .bg-danger-light {
-            background-color: #ffebee;
-        }
-    </style>
 </head>
 
 <body>
@@ -114,114 +76,145 @@
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard Puskesmas</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <i class="fas fa-calendar me-1"></i>Hari Ini
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                <i class="fas fa-filter me-1"></i>Filter
-                            </button>
-                        </div>
                         <button type="button" class="btn btn-sm btn-primary">
                             <i class="fas fa-plus me-1"></i>Tambah Pasien
                         </button>
                     </div>
                 </div>
 
-                <!-- Info Cards -->
-                <div class="row mb-4">
-                    <div class="col-md-3 mb-3">
-                        <div class="card h-100 bg-primary-light">
-                            <div class="card-body text-center">
-                                <i class="fas fa-user-injured card-icon text-primary"></i>
-                                <h5 class="card-title">Total Pasien</h5>
-                                <h2 class="card-text">1,248</h2>
-                                <p class="text-muted"><i class="fas fa-arrow-up text-success"></i> 12% dari bulan lalu
-                                </p>
+                <section class="animated-services py-4">
+                    <div class="row g-4">
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-user-injured icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Dokter Umum</a></h4>
+                                <p>Pelayanan kesehatan menyeluruh untuk segala usia.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-tooth icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Dokter Gigi</a></h4>
+                                <p>Senyum sehat dimulai dari perawatan gigi terbaik.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-child icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Dokter Anak</a></h4>
+                                <p>Perawatan khusus untuk si kecil yang tumbuh sehat.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-plus icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Farmasi</a></h4>
+                                <p>Obat terpercaya, layanan ramah, dan cepat.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-cash-register icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Kasir</a></h4>
+                                <p>Pelayanan transaksi cepat dan akurat, aman dan sejahtera.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-user-nurse icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Perawat</a></h4>
+                                <p>Merawat dengan hati, peduli sepenuh hati.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-user-md icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">Staff</a></h4>
+                                <p>Tim profesional yang siap membantu Anda.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 d-flex">
+                            <div class="item-trans position-relative shadow p-3 bg-body rounded">
+                                <div class="icon"><i class="fas fa-marker icon"></i></div>
+                                <h4><a href="" class="h4 stretched-link">DLL</a></h4>
+                                <p>Layanan lainnya untuk menunjang kenyamanan Anda.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card h-100 bg-success-light">
-                            <div class="card-body text-center">
-                                <i class="fas fa-calendar-day card-icon text-success"></i>
-                                <h5 class="card-title">Kunjungan Hari Ini</h5>
-                                <h2 class="card-text">48</h2>
-                                <p class="text-muted"><i class="fas fa-arrow-down text-danger"></i> 3% dari kemarin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card h-100 bg-warning-light">
-                            <div class="card-body text-center">
-                                <i class="fas fa-procedures card-icon text-warning"></i>
-                                <h5 class="card-title">Rawat Inap</h5>
-                                <h2 class="card-text">12</h2>
-                                <p class="text-muted"><i class="fas fa-arrow-up text-success"></i> 2 dari kemarin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="card h-100 bg-danger-light">
-                            <div class="card-body text-center">
-                                <i class="fas fa-vial card-icon text-danger"></i>
-                                <h5 class="card-title">Tes Lab</h5>
-                                <h2 class="card-text">24</h2>
-                                <p class="text-muted"><i class="fas fa-equals text-secondary"></i> sama dengan kemarin
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
 
                 <!-- Charts and Tables -->
-                <div class="row">
-                    <div class="col-md-8 mb-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Grafik Kunjungan Pasien (30 Hari Terakhir)</h5>
-                            </div>
-                            <div class="card-body">
-                                <!-- Tempat untuk grafik (bisa menggunakan Chart.js) -->
-                                <div class="text-center py-5 bg-light rounded">
-                                    <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
-                                    <p>Grafik kunjungan pasien akan ditampilkan di sini</p>
+
+                {{-- <section id="featured-animation" class="featured-animation section">
+                    <div class="container">
+                        <div class="row gy-4">
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-tooth icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Cabut Gigi</a></h4>
+                                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-pills icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Farmasi</a></h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-stethoscope icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Pemeriksaan</a></h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-microscope icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Laboratorium</a></h4>
+                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                                </div>
+                            </div><!-- End Service Item -->
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-tooth icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Cabut Gigi</a></h4>
+                                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-pills icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Farmasi</a></h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-stethoscope icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Pemeriksaan</a></h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                                </div>
+                            </div><!-- End Service Item -->
+
+                            <div class="col-xl-3 col-md-6 d-flex">
+                                <div class="position-relative">
+                                    <div class="icon"><i class="fas fa-microscope icon"></i></div>
+                                    <h4><a href="" class="stretched-link">Laboratorium</a></h4>
+                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Penyakit Terbanyak</h5>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ISPA
-                                        <span class="badge bg-primary rounded-pill">142</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Hipertensi
-                                        <span class="badge bg-primary rounded-pill">98</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Diabetes
-                                        <span class="badge bg-primary rounded-pill">76</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Diare
-                                        <span class="badge bg-primary rounded-pill">54</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Dermatitis
-                                        <span class="badge bg-primary rounded-pill">32</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                </section> --}}
 
                 <div class="row">
                     <div class="col-12">

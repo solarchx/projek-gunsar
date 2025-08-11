@@ -139,8 +139,13 @@
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
                             <div class="icon"><i class="fas fa-tooth icon"></i></div>
+<<<<<<< HEAD
                             <h4><a href="" class="stretched-link">Kesehatan Gigi</a></h4>
                             <p>Pelayanan kesehatan gigi dan mulut untuk semua usia dengan dokter gigi profesional</p>
+=======
+                            <h4 class=""><a href="" class="stretched-link">Cabut Gigi</a></h4>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+>>>>>>> ab9b3033675ecd2ab269781d7294ccd42f3cca16
                         </div>
                     </div><!-- End Service Item -->
 
