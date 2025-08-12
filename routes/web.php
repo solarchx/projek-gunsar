@@ -21,8 +21,14 @@ Route::get('/dokter/FormDiagnosa', function () {
     return view('dokter.FormDiagnosa');
 });
 
-
 Route::get('/profil', function () {
     return view('profil');
 });
 
+Route::get('/dokter/RekamMedis', function () {
+    return view('dokter.RekamMedis');
+});
+
+Route::get('/dokter/JanjiTemu', function () {
+    return view('dokter.JanjiTemu');
+});

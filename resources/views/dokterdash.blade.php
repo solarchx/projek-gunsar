@@ -20,7 +20,7 @@
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-                <div class="position-sticky pt-3">
+                <div class="position-fixed pt-3">
                     <div class="text-center mb-4">
                         <h4>Puskes GunSar</h4>
                         <hr>
@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/dokter/JanjiTemu">
                                 <i class="fas fa-calendar-check me-2"></i>Janji Temu
                             </a>
                         </li>
@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="dokter/RekamMedis">
                                 <i class="fas fa-file-medical me-2"></i>Rekam Medis
                             </a>
                         </li>

@@ -80,6 +80,39 @@
                                 <textarea class="form-control" rows="3" placeholder="Tuliskan keluhan pasien"></textarea>
                             </div>
 
+                            <!-- Pilihan Surat Rujukan -->
+<div class="mb-3">
+    <label class="form-label">Surat Rujukan</label>
+    <div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rujukan" id="rujukanYa" value="ya">
+            <label class="form-check-label" for="rujukanYa">Butuh</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="rujukan" id="rujukanTidak" value="tidak" checked>
+            <label class="form-check-label" for="rujukanTidak">Tidak</label>
+        </div>
+    </div>
+</div>
+
+<!-- Input tujuan rujukan -->
+<div class="mb-3" id="tujuanRujukan" style="display: none;">
+    <label for="ketRujukan" class="form-label">Tujuan Rujukan</label>
+    <textarea class="form-control" id="ketRujukan" name="tujuan_rujukan" rows="2" placeholder="Tuliskan tujuan rujukan..."></textarea>
+</div>
+
+<!-- Script untuk show/hide -->
+<script>
+    document.getElementById('rujukanYa').addEventListener('change', function() {
+        document.getElementById('tujuanRujukan').style.display = 'block';
+    });
+
+    document.getElementById('rujukanTidak').addEventListener('change', function() {
+        document.getElementById('tujuanRujukan').style.display = 'none';
+    });
+</script>
+
+
                             <div>
                                 <button type="submit" class="btn text-white px-4" style="background-color: teal;">
                                     Simpan Diagnosa
