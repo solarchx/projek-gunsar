@@ -13,9 +13,16 @@ Route::get('/dokter.php', function () {
 Route::get('/dokterdash', function () {
     return view('dokterdash');
 });
+
 Route::get('/dokter/HalamanDokter', function () {
     return view('dokter.HalamanDokter');
 });
 Route::get('/dokter/FormDiagnosa', function () {
     return view('dokter.FormDiagnosa');
 });
+
+
+Route::get('/profil', function () {
+    return view('profil');
+});
+
