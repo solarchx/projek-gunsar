@@ -72,14 +72,8 @@
 
             <!-- Main Content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard Puskesmas</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <button type="button" class="btn btn-sm btn-primary">
-                            <i class="fas fa-plus me-1"></i>Tambah Pasien
-                        </button>
-                    </div>
                 </div>
 
                 <section class="animated-services py-4">
@@ -87,7 +81,7 @@
                         <div class="col-xl-3 col-md-6 d-flex">
                             <div class="item-trans position-relative shadow p-3 bg-body rounded">
                                 <div class="icon"><i class="fas fa-user-injured icon"></i></div>
-                                <h4><a href="" class="h4 stretched-link">Dokter Umum</a></h4>
+                                <h4><a href="/dokter/HalamanDokter" class="h4 stretched-link">Dokter Umum</a></h4>
                                 <p>Pelayanan kesehatan menyeluruh untuk segala usia.</p>
                             </div>
                         </div>
