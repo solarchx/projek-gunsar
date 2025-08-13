@@ -14,21 +14,25 @@ Route::get('/dokterdash', function () {
     return view('dokterdash');
 });
 
-Route::get('/dokter/HalamanDokter', function () {
-    return view('dokter.HalamanDokter');
+Route::get('/dokterumum/HalamanDokter', function () {
+    return view('dokterumum.HalamanDokter');
 });
-Route::get('/dokter/FormDiagnosa', function () {
-    return view('dokter.FormDiagnosa');
+Route::get('/dokterumum/FormDiagnosa', function () {
+    return view('dokterumum.FormDiagnosa');
 });
 
 Route::get('/profil', function () {
     return view('profil');
 });
 
-Route::get('/dokter/RekamMedis', function () {
-    return view('dokter.RekamMedis');
+Route::get('/dokterumum/RekamMedis', function () {
+    return view('dokterumum.RekamMedis');
 });
 
-Route::get('/dokter/JanjiTemu', function () {
-    return view('dokter.JanjiTemu');
+Route::get('/dokterumum/JanjiTemu', function () {
+    return view('dokterumum.JanjiTemu');
+});
+
+Route::get('/dokterumum/ResepObat', function () {
+    return view('dokterumum.ResepObat');
 });

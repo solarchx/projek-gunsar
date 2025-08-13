@@ -1,8 +1,11 @@
 @extends('layout')
 
 @section('konten')
+ <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-5 border-bottom">
+                    <h1 class="h2">Rekam Medis Pasien</h1>
+                </div>
 <div class="container mt-4">
-    <h2 class="mb-4 text-center">Riwayat Pemeriksaan</h2>
+    
 
     <!-- Kolom Pencarian -->
     <div class="mb-3 text-end">

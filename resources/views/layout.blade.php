@@ -29,9 +29,9 @@
                             </a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-injured me-2"></i>Pasien</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/dokter/JanjiTemu"><i class="fas fa-calendar-check me-2"></i>Janji Temu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dokterumum/JanjiTemu"><i class="fas fa-calendar-check me-2"></i>Janji Temu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-pills me-2"></i>Obat</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/dokter/RekamMedis"><i class="fas fa-file-medical me-2"></i>Rekam Medis</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dokterumum/RekamMedis"><i class="fas fa-file-medical me-2"></i>Rekam Medis</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-bar me-2"></i>Laporan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Staf</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cog me-2"></i>Pengaturan</a></li>
@@ -39,10 +39,6 @@
                 </div>
             </div>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard Puskesmas</h1>
-                </div>
-
             <!-- Main Content -->
             <main class="col-md-5  9ms-sm-auto col-lg-11 px-md-4 py-4">
                 @yield('konten')
