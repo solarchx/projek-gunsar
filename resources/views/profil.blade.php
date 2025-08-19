@@ -158,7 +158,6 @@
   <div class="container">
     <div class="profile-header">
       <h2>Siti Nurhaliza</h2>
-      <span>ID Pasien: PKS-2024-001</span>
     </div>
 
     <div class="profile-body">
