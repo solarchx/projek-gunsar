@@ -9,7 +9,7 @@
             <!-- Lebar diperbesar, tidak center -->
             <div class="col-lg-15 col-md-12">
                 <div class="card shadow-sm border-0">
-                    <div class="card-header text-white" style="background-color: teal;">
+                    <div class="card-header text-white" style="background-color: #3fbbc0;">
                         <h4 class="mb-0">Form Diagnosa</h4>
                     </div>
                     <div class="card-body" style="background-color: #ffffff;">
@@ -117,7 +117,7 @@
 
 
                             <div>
-                                <button type="submit" class="btn text-white px-4" style="background-color: teal;">
+                                <button type="submit" class="btn text-white px-4" style="background-color: #3fbbc0;">
                                     Simpan Diagnosa
                                 </button>
                             </div>

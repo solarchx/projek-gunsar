@@ -20,12 +20,12 @@
     }
 
     .navbar {
-      background-color: #22c55e;
+      background-color: #3fbbc0;
       padding: 16px 32px;
       color: white;
       font-weight: 700;
       font-size: 20px;
-      border-bottom: 4px solid #16a34a;
+      border-bottom: 4px solid #3fbbc0;
     }
 
     .navbar small {
@@ -46,7 +46,7 @@
     }
 
     .profile-header {
-      background-color: #dcfce7;
+      background-color: #3fbbc0;
       padding: 32px;
       display: flex;
       flex-direction: column;
@@ -56,7 +56,7 @@
     .profile-header h2 {
       font-size: 24px;
       font-weight: 700;
-      color: #14532d;
+      color: #e8f0f0ff;
     }
 
     .profile-header span {
@@ -103,12 +103,12 @@
     }
 
     .edit {
-      background-color: #22c55e;
+      background-color: #3fbbc0;
       color: white;
     }
 
     .edit:hover {
-      background-color: #16a34a;
+      background-color: #3fbbc0;
     }
 
     .print {
@@ -121,7 +121,7 @@
     }
 
     .visit {
-      background-color: #16a34a;
+      background-color: #3fbbc0;
       color: white;
     }
 
