@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dokter', function () {
+Route::get('/dokter.php', function () {
     return view('dokter');
 });
 
@@ -33,6 +34,4 @@ Route::get('/dokterumum/JanjiTemu', function () {
     return view('dokterumum.JanjiTemu');
 });
 
-Route::get('/dokterumum/ResepObat', function () {
-    return view('dokterumum.ResepObat');
-});
+require __DIR__.'/auth.php';
