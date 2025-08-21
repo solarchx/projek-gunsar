@@ -284,7 +284,7 @@
   data yang anda masukkan akan digunakan untuk keperluan administrasi dan pelayanan kesehatan.
             </p>
             <div>
-                <a href="#" class="btn btn-outline-light-custom">
+                <a href="/login" class="btn btn-outline-light-custom">
                     MASUK
                 </a>
             </div>
@@ -313,7 +313,8 @@
                 </div>
                 
                 <!-- REGISTER FORM -->
-                <form id="registrationForm">
+                <form id="registrationForm" method="POST" action="{{ route('register') }}">
+                    @csrf
                     <!-- Name -->
                     <div class="form-input-group">
                         <label for="name" class="form-label">Nama Lengkap</label>
@@ -360,6 +361,16 @@
                             <span class="toggle-password" onclick="togglePassword()">
                                 <i class="fas fa-eye"></i>
                             </span>
+                        </div>
+                    </div>
+
+                     <!-- Confirm Password -->
+                    <div class="form-input-group">
+                        <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                        <div class="password-container form-input-group">
+                            <i class="fas fa-lock form-icon"></i>
+                            <input id="password_confirmation" type="password" name="password_confirmation" 
+                                class="form-control" placeholder="Ulangi password" required>
                         </div>
                     </div>
                     
@@ -411,7 +422,7 @@
         
         // Form submission handling
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             
             // Basic validation
             const nik = document.getElementById('nik').value;
@@ -422,7 +433,7 @@
             
             // If validation passes, you can submit the form
             alert('Pendaftaran berhasil! Akun Anda telah dibuat.');
-            this.reset();
+            // this.reset();
         });
     </script>
 </body>
