@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/dokter', function () {
+    return view('dokter');
+});
+
 Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -15,6 +19,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/dokterumum/HalamanDokter', function () {
+    return view('dokterumum.HalamanDokter');
+});
+Route::get('/dokterumum/FormDiagnosa', function () {
+    return view('dokterumum.FormDiagnosa');
+});
+
+Route::get('/profil', function () {
+    return view('profil');
+});
+
+Route::get('/dokterumum/RekamMedis', function () {
+    return view('dokterumum.RekamMedis');
+});
+
+Route::get('/dokterumum/JanjiTemu', function () {
+    return view('dokterumum.JanjiTemu');
 });
 
 require __DIR__.'/auth.php';
