@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dokter.php', function () {
+Route::get('/dokter', function () {
     return view('dokter');
 });
 
