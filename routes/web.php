@@ -7,6 +7,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route for dokter  
 Route::get('/dokter', function () {
     return view('dokter');
 });
@@ -22,10 +23,6 @@ Route::get('/dokterumum/FormDiagnosa', function () {
     return view('dokterumum.FormDiagnosa');
 });
 
-Route::get('/profil', function () {
-    return view('profil');
-});
-
 Route::get('/dokterumum/RekamMedis', function () {
     return view('dokterumum.RekamMedis');
 });
@@ -33,5 +30,11 @@ Route::get('/dokterumum/RekamMedis', function () {
 Route::get('/dokterumum/JanjiTemu', function () {
     return view('dokterumum.JanjiTemu');
 });
+
+// route for pasien
+Route::get('/profil', function () {
+    return view('profil');
+});
+
 
 require __DIR__.'/auth.php';
