@@ -24,7 +24,7 @@
                     </div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link @if(Request::is('dokterdash')) active @endif" href="{{ url('dokterdash') }}">
+                            <a class="nav-link @if(Request::is('dashboard')) active @endif" href="{{ url('dashboard') }}">
                                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
                             </a>
                         </li>
