@@ -28,6 +28,10 @@ Route::get('/dokterumum/FormDiagnosa', function () {
     return view('dokterumum.FormDiagnosa');
 });
 
+Route::get('/dokterumum/RekamMedisdetail', function () {
+    return view('dokterumum.RekamMedisdetail');
+});
+
 Route::get('/profil', function () {
     return view('profil');
 });
