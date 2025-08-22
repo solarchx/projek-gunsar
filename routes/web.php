@@ -15,6 +15,8 @@ Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -38,6 +40,10 @@ Route::get('/dokterumum/RekamMedis', function () {
 
 Route::get('/dokterumum/JanjiTemu', function () {
     return view('dokterumum.JanjiTemu');
+});
+
+Route::get('/dashboard/screening', function () {
+    return view('skrining');
 });
 
 require __DIR__.'/auth.php';
