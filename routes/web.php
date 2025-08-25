@@ -7,12 +7,21 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route for dokter  
 Route::get('/dokter', function () {
     return view('dokter');
 });
 
-Route::get('/dokterdash', function () {
+Route::get('/dashboard', function () {
     return view('dokterdash');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/dokterumum/HalamanDokter', function () {
@@ -20,6 +29,11 @@ Route::get('/dokterumum/HalamanDokter', function () {
 });
 Route::get('/dokterumum/FormDiagnosa', function () {
     return view('dokterumum.FormDiagnosa');
+});
+
+
+Route::get('/dokterumum/RekamMedisdetail', function () {
+    return view('dokterumum.RekamMedisdetail');
 });
 
 Route::get('/profil', function () {
@@ -33,5 +47,15 @@ Route::get('/dokterumum/RekamMedis', function () {
 Route::get('/dokterumum/JanjiTemu', function () {
     return view('dokterumum.JanjiTemu');
 });
+
+Route::get('/dashboard/screening', function () {
+    return view('skrining');
+});
+
+// route for pasien
+Route::get('/profil', function () {
+    return view('profil');
+});
+
 
 require __DIR__.'/auth.php';

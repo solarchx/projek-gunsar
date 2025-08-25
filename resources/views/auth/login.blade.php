@@ -385,7 +385,7 @@
                 </div>
                 
                 <!-- LOGIN FORM -->
-                <form method="POST" action="{{ route('login') }}">
+                <form id="loginForm" method="POST" action="{{ route('login') }}">
                     @csrf
                     <!-- NIK -->
                     <div class="form-input-group">
