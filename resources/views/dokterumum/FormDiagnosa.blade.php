@@ -1,17 +1,9 @@
 @extends('layoutdokter')
 
 @section('konten')
-<<<<<<< HEAD
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2"> Formulir Diagnosa</h1>
-</div>
+
+
 <!DOCTYPE html>
-=======
- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2"> Formulir Diagnosa</h1>
-                </div>
- <!DOCTYPE html>
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -39,39 +31,34 @@
       color: #333;
     }
     h5 {
-<<<<<<< HEAD
       border-left: 4px solid #3fbbc0;
       padding-left: 0.6rem;
       margin-bottom: 1rem;
       color: #3fbbc0;
-=======
       border-left: 4px solid #28a745;
       padding-left: 0.6rem;
       margin-bottom: 1rem;
       color: #28a745;
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b
     }
     textarea, input, select {
       border-radius: 10px !important;
     }
     .btn-success {
-<<<<<<< HEAD
+
       background-color: #3fbbc0;
       border-color: #3fbbc0;
-=======
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b
+
       border-radius: 12px;
       padding: 0.8rem;
       font-size: 1.1rem;
       font-weight: bold;
-<<<<<<< HEAD
+
       color: white;
     }
     .btn-success:hover {
       background-color: #35a8ac;
       border-color: #35a8ac;
-=======
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b
+
     }
   </style>
 </head>
@@ -136,11 +123,7 @@
 
           <!-- Diagnosa Khusus -->
           <div id="diagnosaDemam" class="d-none">
-<<<<<<< HEAD
-            <h5>🌡 Diagnosa Khusus Demam</h5>
-=======
             <h5>🌡️ Diagnosa Khusus Demam</h5>
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label class="form-label">Suhu Badan</label>
@@ -225,12 +208,5 @@
 
 </body>
 </html>
-<<<<<<< HEAD
+
 @endsection
-=======
-
-
-
-
-    @endsection
->>>>>>> 4c0cdfde361821e1f682ae2e828500e335180d7b

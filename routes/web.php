@@ -27,11 +27,15 @@ Route::middleware('auth')->group(function () {
 Route::get('/dokterumum/HalamanDokter', function () {
     return view('dokterumum.HalamanDokter');
 });
+Route::get('/doktergigi/HalamanDokter', function () {
+    return view('doktergigi.HalamanDokter');
+});
 Route::get('/dokterumum/FormDiagnosa', function () {
     return view('dokterumum.FormDiagnosa');
 });
-
-
+Route::get('/doktergigi/FormDiagnosa', function () {
+    return view('doktergigi.FormDiagnosa');
+});
 Route::get('/dokterumum/RekamMedisdetail', function () {
     return view('dokterumum.RekamMedisdetail');
 });
