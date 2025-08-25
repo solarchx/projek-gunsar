@@ -30,7 +30,7 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-injured me-2"></i>Pasien</a></li>
                         <li class="nav-item"><a class="nav-link" href="/dokterumum/JanjiTemu"><i class="fas fa-calendar-check me-2"></i>Janji Temu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-pills me-2"></i>Obat</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dokterumum/ResepObat"><i class="fas fa-pills me-2"></i>Obat</a></li>
                         <li class="nav-item"><a class="nav-link" href="/dokterumum/RekamMedis"><i class="fas fa-file-medical me-2"></i>Rekam Medis</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-bar me-2"></i>Laporan</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Staf</a></li>

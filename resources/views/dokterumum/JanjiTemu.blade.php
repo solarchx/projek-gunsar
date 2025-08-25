@@ -1,65 +1,81 @@
 @extends('layoutdokter')
 @section('konten')
- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-5 border-bottom">
-                    <h1 class="h2">Janji Temu</h1>
-                </div>
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Pasien Hari Ini</title>
+  <title>Janji Temu Pasien</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
-      background: #f0f8f8;
+      background: #f4f7fa;
+      font-family: "Segoe UI", sans-serif;
     }
-    .card {
-      border-radius: 15px;
-      overflow: hidden;
+    .header-bar {
+      text-align: center;
+      margin-bottom: 30px;
     }
-    .list-group-item {
-      border: none;
-      border-bottom: 1px solid #e6f0f0;
-      padding: 15px 20px;
-      transition: background 0.2s ease;
+    .header-bar h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #004d40;
     }
-    .list-group-item:hover {
-      background: #f5fbfb;
+    .header-bar p {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+    .patient-card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .patient-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+    .patient-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .patient-info {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .status-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
     }
     .status-badge {
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+    }
+    .btn-action {
+      border-radius: 25px;
       font-size: 0.85rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-    }
-    .btn-sm {
-      border-radius: 10px;
-      padding: 5px 12px;
-    }
-    .title-bar {
-      background: #6AD4DD;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      padding: 6px 14px;
     }
   </style>
 </head>
 <body>
 
 <div class="container py-4">
-  <div class="card shadow-sm border-0">
-    <div class="title-bar">
-      <h4>Daftar Pasien Poli Umum</h4>
-    </div>
-    <div class="card-body p-0" style="max-height: 500px; overflow-y: auto;">
-      <ul class="list-group list-group-flush" id="patientList">
-        <!-- Data pasien akan dimuat via JavaScript -->
-      </ul>
-    </div>
+  <!-- Header -->
+  <div class="header-bar">
+    <h2><i class="bi bi-hospital me-2 text-success"></i>Janji Temu Pasien</h2>
+    <p>Daftar pasien poli umum yang terjadwal hari ini</p>
   </div>
+
+  <!-- List pasien -->
+  <div id="patientList"></div>
 </div>
 
 <script>
@@ -82,17 +98,22 @@ function renderPatients() {
     if (p.status === "Selesai") badgeClass = "bg-info text-dark";
     
     list.innerHTML += `
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <h6 class="mb-1 fw-bold text-teal">${p.nama}</h6>
-          <small class="text-muted">Poli ${p.poli} - ${p.jam}</small>
+      <div class="patient-card">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <div class="patient-name"><i class="bi bi-person-circle me-2 text-primary"></i>${p.nama}</div>
+            <div class="patient-info">Poli ${p.poli} • Jam ${p.jam}</div>
+          </div>
+          <div>
+            <span class="status-badge badge ${badgeClass}">${p.status}</span>
+          </div>
         </div>
-        <div>
-          <span class="status-badge badge ${badgeClass} me-2">${p.status}</span>
-          ${p.status === "Menunggu" ? `<button class="btn btn-sm btn-primary" onclick="updateStatus(${p.id}, 'Dipanggil')">Panggil</button>` : ""}
-          ${p.status === "Dipanggil" ? `<button class="btn btn-sm btn-success" onclick="updateStatus(${p.id}, 'Selesai')">Selesai</button>` : ""}
+        
+        <div class="status-line">
+          ${p.status === "Menunggu" ? `<button class="btn btn-primary btn-action" onclick="updateStatus(${p.id}, 'Dipanggil')"><i class="bi bi-bell"></i> Panggil</button>` : ""}
+          ${p.status === "Dipanggil" ? `<button class="btn btn-success btn-action" onclick="updateStatus(${p.id}, 'Selesai')"><i class="bi bi-check-circle"></i> Selesai</button>` : ""}
         </div>
-      </li>
+      </div>
     `;
   });
 }
@@ -110,7 +131,6 @@ renderPatients();
 
 </body>
 </html>
-
 
 
 @endsection

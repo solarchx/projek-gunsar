@@ -48,6 +48,10 @@ Route::get('/dokterumum/JanjiTemu', function () {
     return view('dokterumum.JanjiTemu');
 });
 
+Route::get('/dokterumum/ResepObat', function () {
+    return view('dokterumum.ResepObat');
+});
+
 Route::get('/dashboard/screening', function () {
     return view('skrining');
 });
