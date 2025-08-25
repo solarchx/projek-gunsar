@@ -179,8 +179,8 @@
 
         <!-- Tombol -->
         <div class="d-flex gap-2 mt-3">
-            <a href="halaman-utama.html" class="btn btn-home btn-custom">Halaman Utama</a>
-            <a href="halaman-selanjutnya.html" class="btn btn-next btn-custom">Lanjutkan →</a>
+            <a href="#" class="btn btn-home btn-custom">Halaman Utama</a>
+            <a href="#" class="btn btn-next btn-custom">Lanjutkan →</a>
         </div>
     </div>
 
