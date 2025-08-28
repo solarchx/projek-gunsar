@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Diagnosa Poli Umum</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       background-color: #f4f9f8;
@@ -29,10 +30,6 @@
       color: #333;
     }
     h5 {
-      border-left: 4px solid #3fbbc0;
-      padding-left: 0.6rem;
-      margin-bottom: 1rem;
-      color: #3fbbc0;
       border-left: 4px solid #28a745;
       padding-left: 0.6rem;
       margin-bottom: 1rem;
@@ -42,21 +39,40 @@
       border-radius: 10px !important;
     }
     .btn-success {
-
       background-color: #3fbbc0;
       border-color: #3fbbc0;
-
       border-radius: 12px;
       padding: 0.8rem;
       font-size: 1.1rem;
       font-weight: bold;
-
       color: white;
     }
     .btn-success:hover {
       background-color: #35a8ac;
       border-color: #35a8ac;
-
+    }
+    .btn-resep {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      border-radius: 12px;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+    }
+    .btn-resep:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 576px) {
+      .action-buttons {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -67,6 +83,9 @@
     <!-- Header -->
     <div class="header d-flex justify-content-between align-items-center">
       <h3 class="mb-0">🩺 Form Diagnosa Poli Umum</h3>
+      <a href="/ResepObat" class="btn btn-light">
+        <i class="fas fa-prescription me-1"></i> Buat Resep
+      </a>
     </div>
 
     <!-- Body -->
@@ -171,8 +190,13 @@
           </div>
 
           <!-- Tombol -->
-          <div class="mt-4">
-            <button type="submit" class="btn btn-success w-100"> Simpan Diagnosa</button>
+          <div class="mt-4 action-buttons">
+            <button type="submit" class="btn btn-success flex-fill">
+              <i class="fas fa-save me-1"></i> Simpan Diagnosa
+            </button>
+            <a href="/ResepObat" class="btn btn-resep flex-fill">
+              <i class="fas fa-prescription me-1"></i> Simpan & Buat Resep
+            </a>
           </div>
 
         </form>

@@ -384,8 +384,8 @@
             </div>
             <div class="card-body">
                 <label for="obatRekomendasi" class="form-label">Rekomendasi Obat</label>
-                <textarea class="form-control" name="obat_rekomendasi" id="obatRekomendasi" rows="3" placeholder="Tulis rekomendasi obat yang dapat dibeli tanpa resep..."></textarea>
-                <div class="form-text mt-2">Rekomendasi obat yang dapat dibeli tanpa resep dokter</div>
+                <textarea class="form-control" name="obat_rekomendasi" id="obatRekomendasi" rows="3" placeholder="Tulis rekomendasi obat yang harus dibeli. . ."></textarea>
+                <div class="form-text mt-2">Rekomendasi obat yang harus dibeli. . .</div>
             </div>
         </div>
 
