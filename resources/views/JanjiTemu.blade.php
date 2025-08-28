@@ -228,18 +228,21 @@
       }
     }
     html, body {
-  height: 100%;
-  width: 100%;
-}
+      height: 100%;
+      width: 100%;
+    }
 
-.main-container {
-  max-width: 100% !important;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-}
-  
+    .main-container {
+      max-width: 100% !important;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    
+    .text-teal {
+      color: var(--teal-primary);
+    }
   </style>
 </head>
 <body>
@@ -254,17 +257,17 @@
     <!-- Header -->
     <div class="header-bar">
       <h2><i class="bi bi-calendar2-check me-2"></i>Janji Temu Pasien</h2>
-      <p>Daftar pasien poli umum yang terjadwal hari ini</p>
+      <p>Daftar pasien yang terjadwal hari ini</p>
     </div>
     
     <!-- Stats Box -->
     <div class="stats-box">
       <div class="stat-item">
-        <div class="stat-number" id="totalPatients">3</div>
+        <div class="stat-number" id="totalPatients">6</div>
         <div class="stat-label">Total Pasien</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number" id="waitingPatients">3</div>
+        <div class="stat-number" id="waitingPatients">6</div>
         <div class="stat-label">Menunggu</div>
       </div>
       <div class="stat-item">
@@ -281,20 +284,20 @@
     <div class="filter-bar">
       <div>
         <span class="fw-bold text-teal">Filter:</span>
-        <select class="filter-select ms-2">
-          <option>Semua Status</option>
-          <option>Menunggu</option>
-          <option>Dipanggil</option>
-          <option>Selesai</option>
+        <select id="statusFilter" class="filter-select ms-2">
+          <option value="semua">Semua Status</option>
+          <option value="Menunggu">Menunggu</option>
+          <option value="Dipanggil">Dipanggil</option>
+          <option value="Selesai">Selesai</option>
         </select>
       </div>
       <div>
         <span class="fw-bold text-teal">Poli:</span>
-        <select class="filter-select ms-2">
-          <option>Semua Poli</option>
-          <option selected>Umum</option>
-          <option>Gigi</option>
-          <option>Anak</option>
+        <select id="poliFilter" class="filter-select ms-2">
+          <option value="semua">Semua Poli</option>
+          <option value="Umum">Umum</option>
+          <option value="Gigi">Gigi</option>
+          <option value="Anak">Anak</option>
         </select>
       </div>
     </div>
@@ -304,12 +307,19 @@
   </div>
 
   <script>
-    // Data pasien contoh
+    // Data pasien contoh dengan berbagai poli
     let patients = [
       { id: 1, nama: "Ahmad Fulan", poli: "Umum", jam: "09:00", status: "Menunggu" },
       { id: 2, nama: "Budi Santoso", poli: "Umum", jam: "11:00", status: "Menunggu" },
-      { id: 3, nama: "Siti Aminah", poli: "Umum", jam: "10:30", status: "Menunggu" }
+      { id: 3, nama: "Siti Aminah", poli: "Umum", jam: "10:30", status: "Menunggu" },
+      { id: 4, nama: "Dewi Lestari", poli: "Gigi", jam: "09:30", status: "Menunggu" },
+      { id: 5, nama: "Rina Wati", poli: "Gigi", jam: "10:00", status: "Menunggu" },
+      { id: 6, nama: "Joko Widodo", poli: "Anak", jam: "11:30", status: "Menunggu" }
     ];
+
+    // Variabel untuk menyimpan filter yang aktif
+    let activeStatusFilter = "semua";
+    let activePoliFilter = "semua";
 
     // Fungsi untuk update statistik
     function updateStats() {
@@ -324,12 +334,41 @@
       document.getElementById('completedPatients').textContent = completed;
     }
 
-    // Fungsi render pasien
+    // Fungsi untuk memfilter pasien berdasarkan status dan poli
+    function filterPatients() {
+      let filteredPatients = patients;
+      
+      // Filter berdasarkan status
+      if (activeStatusFilter !== "semua") {
+        filteredPatients = filteredPatients.filter(p => p.status === activeStatusFilter);
+      }
+      
+      // Filter berdasarkan poli
+      if (activePoliFilter !== "semua") {
+        filteredPatients = filteredPatients.filter(p => p.poli === activePoliFilter);
+      }
+      
+      return filteredPatients;
+    }
+
+    // Fungsi render pasien dengan filter
     function renderPatients() {
       const list = document.getElementById("patientList");
       list.innerHTML = "";
       
-      patients.forEach(p => {
+      const filteredPatients = filterPatients();
+      
+      if (filteredPatients.length === 0) {
+        list.innerHTML = `
+          <div class="text-center p-4">
+            <i class="bi bi-inbox" style="font-size: 3rem; color: #ccc;"></i>
+            <p class="mt-3 text-muted">Tidak ada pasien yang sesuai dengan filter</p>
+          </div>
+        `;
+        return;
+      }
+      
+      filteredPatients.forEach(p => {
         let badgeClass = "badge-waiting";
         if (p.status === "Dipanggil") badgeClass = "badge-called";
         if (p.status === "Selesai") badgeClass = "badge-completed";
@@ -364,6 +403,17 @@
       if (patient) patient.status = newStatus;
       renderPatients();
     }
+
+    // Event listener untuk filter
+    document.getElementById('statusFilter').addEventListener('change', function() {
+      activeStatusFilter = this.value;
+      renderPatients();
+    });
+
+    document.getElementById('poliFilter').addEventListener('change', function() {
+      activePoliFilter = this.value;
+      renderPatients();
+    });
 
     // Render pertama kali
     renderPatients();

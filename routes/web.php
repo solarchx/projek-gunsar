@@ -45,16 +45,16 @@ Route::get('/profil', function () {
     return view('profil');
 });
 
-Route::get('/dokterumum/RekamMedis', function () {
-    return view('dokterumum.RekamMedis');
+Route::get('/RekamMedis', function () {
+    return view('RekamMedis');
 });
 
-Route::get('/dokterumum/JanjiTemu', function () {
-    return view('dokterumum.JanjiTemu');
+Route::get('/JanjiTemu', function () {
+    return view('JanjiTemu');
 });
 
-Route::get('/dokterumum/ResepObat', function () {
-    return view('dokterumum.ResepObat');
+Route::get('/ResepObat', function () {
+    return view('ResepObat');
 });
 
 Route::get('/dashboard/screening', function () {
