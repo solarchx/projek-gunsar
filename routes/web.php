@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,6 +23,8 @@ Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -31,16 +34,37 @@ Route::middleware('auth')->group(function () {
 Route::get('/dokterumum/HalamanDokter', function () {
     return view('dokterumum.HalamanDokter');
 });
+Route::get('/doktergigi/HalamanDokter', function () {
+    return view('doktergigi.HalamanDokter');
+});
 Route::get('/dokterumum/FormDiagnosa', function () {
     return view('dokterumum.FormDiagnosa');
 });
-
-Route::get('/dokterumum/RekamMedis', function () {
-    return view('dokterumum.RekamMedis');
+Route::get('/doktergigi/FormDiagnosa', function () {
+    return view('doktergigi.FormDiagnosa');
+});
+Route::get('/dokterumum/RekamMedisdetail', function () {
+    return view('dokterumum.RekamMedisdetail');
 });
 
-Route::get('/dokterumum/JanjiTemu', function () {
-    return view('dokterumum.JanjiTemu');
+Route::get('/profil', function () {
+    return view('profil');
+});
+
+Route::get('/RekamMedis', function () {
+    return view('RekamMedis');
+});
+
+Route::get('/JanjiTemu', function () {
+    return view('JanjiTemu');
+});
+
+Route::get('/ResepObat', function () {
+    return view('ResepObat');
+});
+
+Route::get('/dashboard/screening', function () {
+    return view('skrining');
 });
 
 // route for pasien

@@ -313,6 +313,17 @@
                 </div>
                 
                 <!-- REGISTER FORM -->
+                 
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endif
+                 
                 <form id="registrationForm" method="POST" action="{{ route('register') }}">
                     @csrf
                     <!-- Name -->
@@ -428,11 +439,11 @@
             const nik = document.getElementById('nik').value;
             if (nik.length !== 16 || isNaN(nik)) {
                 alert('NIK harus terdiri dari 16 digit angka');
-                return;
+                e.preventDefault(); // Prevent submission if invalid
             }
             
             // If validation passes, you can submit the form
-            alert('Pendaftaran berhasil! Akun Anda telah dibuat.');
+            // alert('Pendaftaran berhasil! Akun Anda telah dibuat.');
             // this.reset();
         });
     </script>

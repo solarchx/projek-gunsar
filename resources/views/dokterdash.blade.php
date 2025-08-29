@@ -66,6 +66,19 @@
                                 <i class="fas fa-cog me-2"></i>Pengaturan
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile">
+                                <i class="fas fa-user me-2"></i>Profil
+                            </a>
+                        </li>
+                        <li class="nav-item">
+    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+        @csrf
+        <button type="submit" class="nav-link btn btn-link text-start">
+            <i class="fas fa-sign-out-alt me-2"></i>Logout
+        </button>
+    </form>
+</li>
                     </ul>
                 </div>
             </div>
