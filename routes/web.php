@@ -7,6 +7,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/farmasi/obat', function () {
+    return view('farmasi.obat');
+});
+
+
+
 // Route for dokter  
 Route::get('/dokter', function () {
     return view('dokter');
