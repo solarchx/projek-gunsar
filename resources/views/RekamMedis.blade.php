@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manajemen Pasien</title>
+  <title>Rekam Medis</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <style>
@@ -110,7 +110,7 @@
     <div class="mb-4 p-4 rounded-4 shadow-sm text-white gradient-header">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <h2 class="mb-1 fw-light"><i class="bi bi-heart-pulse me-2"></i>Manajemen Pasien</h2>
+          <h2 class="mb-1 fw-light"><i class="bi bi-heart-pulse me-2"></i>Rekam Medis Pasien</h2>
           <p class="mb-0 opacity-90">Daftar pasien dan screening medis terintegrasi</p>
         </div>
         <div class="bg-white p-2 rounded-circle shadow">
@@ -187,7 +187,7 @@
                             data-bs-toggle="modal" data-bs-target="#detailModal2">
                       <i class="bi bi-clipboard2-pulse me-1"></i> Screening
                     </button>
-                    <a href="/dokterumum/RekamMedisdetail" 
+                    <a href="/RekamMedisdetail" 
                        class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
                       <i class="bi bi-info-circle me-1"></i> Detail
                     </a>
@@ -224,7 +224,7 @@
                             data-bs-toggle="modal" data-bs-target="#detailModal2">
                       <i class="bi bi-clipboard2-pulse me-1"></i> Screening
                     </button>
-                    <a href="/dokterumum/RekamMedisdetail" 
+                    <a href="/ RekamMedisdetail" 
                        class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
                       <i class="bi bi-info-circle me-1"></i> Detail
                     </a>

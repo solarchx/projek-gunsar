@@ -36,8 +36,8 @@ Route::get('/dokterumum/FormDiagnosa', function () {
 Route::get('/doktergigi/FormDiagnosa', function () {
     return view('doktergigi.FormDiagnosa');
 });
-Route::get('/dokterumum/RekamMedisdetail', function () {
-    return view('dokterumum.RekamMedisdetail');
+Route::get('/RekamMedisdetail', function () {
+    return view('RekamMedisdetail');
 });
 
 Route::get('/profil', function () {
