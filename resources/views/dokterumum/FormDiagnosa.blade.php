@@ -14,30 +14,38 @@
       background-color: #f4f9f8;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     .header {
       background: linear-gradient(90deg, #6AD4DD, #4BBFBA);
       color: white;
       padding: 1rem 2rem;
     }
+
     .card-form {
       background: white;
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
+
     .form-label {
       font-weight: 600;
       color: #333;
     }
+
     h5 {
       border-left: 4px solid #28a745;
       padding-left: 0.6rem;
       margin-bottom: 1rem;
       color: #28a745;
     }
-    textarea, input, select {
+
+    textarea,
+    input,
+    select {
       border-radius: 10px !important;
     }
+
     .btn-success {
       background-color: #3fbbc0;
       border-color: #3fbbc0;
@@ -47,6 +55,7 @@
       font-weight: bold;
       color: white;
     }
+
     .btn-success:hover {
       background-color: #35a8ac;
       border-color: #35a8ac;
@@ -76,6 +85,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="d-flex flex-column min-vh-100">
@@ -189,6 +199,12 @@
             </div>
           </div>
 
+          <!-- Diagnosa Final -->
+          <div class="mb-3 mt-2">
+            <label for="diagnosa_final" class="form-label">🩺 Diagnosa Final</label>
+            <input type="text" name="diagnosa_final" id="diagnosa_final" class="form-control" placeholder="Tuliskan diagnosa akhir pasien">
+          </div>
+
           <!-- Tombol -->
           <div class="mt-4 action-buttons">
             <button type="submit" class="btn btn-success flex-fill">
@@ -229,6 +245,7 @@
   </script>
 
 </body>
+
 </html>
 
 @endsection
