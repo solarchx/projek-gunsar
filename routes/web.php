@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,10 +47,13 @@ Route::prefix('dokterumum')->name('dokterumum.')->group(function () {
     })->name('JanjiTemu');
 });
 
+
 // Route untuk screening
 Route::get('/dashboard/screening', function () {
     return view('skrining');
 })->name('screening');
+
+Route::resource('screening', ScreeningController::class); 
 
 // Route untuk profil pasien
 Route::get('/profil', function () {

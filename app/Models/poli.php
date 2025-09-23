@@ -4,18 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Poli extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nama_poli'
-    ];
+    protected $fillable = ['nama_poli', 'deskripsi'];
 
-    public function dokters(): HasMany
+    public function dokters()
     {
-        return $this->hasMany(Dokter::class, 'poli_id');
+        return $this->hasMany(Dokter::class);
     }
 }
