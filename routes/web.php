@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ObatController;
+
+Route::resource('obat', ObatController::class);
+
 
 Route::get('/', function () {
     return view('index');
@@ -35,4 +39,7 @@ Route::get('/dokterumum/JanjiTemu', function () {
 
 Route::get('/dokterumum/ResepObat', function () {
     return view('dokterumum.ResepObat');
+});
+Route::get('/farmasi', function () {
+    return view('farmasi');
 });
