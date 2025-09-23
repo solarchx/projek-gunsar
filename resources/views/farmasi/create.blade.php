@@ -1,4 +1,4 @@
-{{-- <!doctype html>
+<!doctype html>
 <html lang="id" data-bs-theme="light">
 <head>
     <meta charset="utf-8">
@@ -30,7 +30,7 @@
             <div class="card custom-card p-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0"><i class="fa-solid fa-plus"></i> Tambah Obat</h5>
-                    <a href="{{ route('farmasi.index') }}" class="btn btn-light btn-sm"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+                    <a href="{{ route('farmasi.index') }}" class="btn btn-secondary">Kembali</a>
                 </div>
 
                 <div class="card-body p-4">
@@ -72,4 +72,4 @@
         </div>
     </main>
 </body>
-</html> --}}
+</html>

@@ -1,45 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ObatController;
+use App\Http\Controllers\FarmasiController;
 
-Route::resource('obat', ObatController::class);
+// ✅ Route resource untuk Farmasi
+Route::resource('farmasi', FarmasiController::class);
 
-
+// ✅ Halaman utama
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dokter.php', function () {
-    return view('dokter');
+// ✅ Route untuk halaman dokter
+Route::view('/dokter', 'dokter')->name('dokter');
+Route::view('/dokterdash', 'dokterdash')->name('dokterdash');
+
+// ✅ Route untuk halaman dokter umum
+Route::prefix('dokterumum')->group(function () {
+    Route::view('/HalamanDokter', 'dokterumum.HalamanDokter')->name('dokterumum.halaman');
+    Route::view('/FormDiagnosa', 'dokterumum.FormDiagnosa')->name('dokterumum.diagnosa');
+    Route::view('/RekamMedis', 'dokterumum.RekamMedis')->name('dokterumum.rekam');
+    Route::view('/JanjiTemu', 'dokterumum.JanjiTemu')->name('dokterumum.janji');
+    Route::view('/ResepObat', 'dokterumum.ResepObat')->name('dokterumum.resep');
 });
 
-Route::get('/dokterdash', function () {
-    return view('dokterdash');
-});
-
-Route::get('/dokterumum/HalamanDokter', function () {
-    return view('dokterumum.HalamanDokter');
-});
-Route::get('/dokterumum/FormDiagnosa', function () {
-    return view('dokterumum.FormDiagnosa');
-});
-
-Route::get('/profil', function () {
-    return view('profil');
-});
-
-Route::get('/dokterumum/RekamMedis', function () {
-    return view('dokterumum.RekamMedis');
-});
-
-Route::get('/dokterumum/JanjiTemu', function () {
-    return view('dokterumum.JanjiTemu');
-});
-
-Route::get('/dokterumum/ResepObat', function () {
-    return view('dokterumum.ResepObat');
-});
-Route::get('/farmasi', function () {
-    return view('farmasi');
-});
+// ✅ Route untuk profil
+Route::view('/profil', 'profil')->name('profil');

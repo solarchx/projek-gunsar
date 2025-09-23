@@ -9,24 +9,22 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
 {
-    Schema::create('obats', function (Blueprint $table) {
+    Schema::create('farmasis', function (Blueprint $table) {
         $table->id();
         $table->string('nama_obat');
         $table->string('jenis_obat');
         $table->string('no_obat');
-        $table->string('stock_obat');
+        $table->integer('stok_obat');
         $table->timestamps();
     });
 }
 
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('obats');
-    }
+
+
+
+
+
 };

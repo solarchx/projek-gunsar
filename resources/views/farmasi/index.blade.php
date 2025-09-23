@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Dashboard Farmasi</title>
@@ -92,7 +92,7 @@
             position: fixed;
             top: 15px;
             right: 20px;
-            background:transparent;
+            background: transparent;
             color: #fff;
             border: none;
             padding: 8px 12px;
@@ -103,7 +103,7 @@
         }
 
         body.dark-mode .dark-toggle {
-            background: transparent     ;
+            background: transparent;
         }
     </style>
 </head>
@@ -126,7 +126,7 @@
         <div class="dashboard-card">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="mb-0">Daftar Obat</h2>
-                <a href="{{ route('obat.create') }}" class="btn btn-primary">+ Tambah Obat</a>
+                <a href="{{ route('farmasi.create') }}" class="btn btn-primary">+ Tambah Obat</a>
             </div>
 
             @if(session('success'))
@@ -140,20 +140,22 @@
                         <th>Nama Obat</th>
                         <th>Jenis Obat</th>
                         <th>No Obat</th>
-                        <th>Stock</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @if(isset($obats) && $obats->count())
-                        @foreach($obats as $index => $obat)
+                    @if($farmasis->count())
+                        @foreach($farmasis as $index => $obat)
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $obat->nama_obat }}</td>
                             <td>{{ $obat->jenis_obat }}</td>
                             <td>{{ $obat->no_obat }}</td>
+                            <td>{{ $obat->stok_obat }}</td>
                             <td>
-                                <a href="{{ route('obat.edit', $obat->id) }}" class="btn btn-warning btn-sm">Update</a>
-                                <form action="{{ route('obat.destroy', $obat->id) }}" method="POST" style="display:inline;">
+                                <a href="{{ route('farmasi.edit', $obat->id) }}" class="btn btn-warning btn-sm">Update</a>
+                                <form action="{{ route('farmasi.destroy', $obat->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
@@ -163,7 +165,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="5" class="text-center">Data obat belum ada</td>
+                            <td colspan="6" class="text-center">Data obat belum ada</td>
                         </tr>
                     @endif
                 </tbody>
@@ -182,4 +184,4 @@
         });
     </script>
 </body>
-</html> --}}
+</html>

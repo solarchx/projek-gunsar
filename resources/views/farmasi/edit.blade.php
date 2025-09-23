@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Edit Obat</title>
@@ -17,7 +17,7 @@
         </div>
     @endif
 
-    <form action="{{ route('obat.update', $obat->id) }}" method="POST">
+    <form action="{{ route('farmasi.update', $obat->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -36,8 +36,13 @@
             <input type="text" name="no_obat" class="form-control" value="{{ $obat->no_obat }}">
         </div>
 
+        <div class="mb-3">
+            <label>Stok Obat</label>
+            <input type="number" name="stok_obat" class="form-control" value="{{ $obat->stok_obat }}">
+        </div>
+
         <button type="submit" class="btn btn-success">Update</button>
-        <a href="{{ route('obat.index') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ route('farmasi.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </body>
-</html> --}}
+</html>
