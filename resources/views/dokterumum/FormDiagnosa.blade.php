@@ -389,25 +389,6 @@
                 Pasien ini perlu dirujuk ke fasilitas kesehatan lain
               </label>
             </div>
-            
-            <div class="d-none" id="formRujukan">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Tujuan Rujukan</label>
-                  <input type="text" class="form-control" placeholder="Rumah sakit/poli tujuan">
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label class="form-label">Alasan Rujukan</label>
-                  <input type="text" class="form-control" placeholder="Alasan dirujuk">
-                </div>
-              </div>
-              
-              <div class="mb-3">
-                <label class="form-label">Kondisi Pasien Saat Dirujuk</label>
-                <textarea class="form-control" rows="2" placeholder="Kondisi terakhir pasien sebelum dirujuk"></textarea>
-              </div>
-            </div>
-            
             <div class="mb-3">
               <label class="form-label">Persetujuan Pasien/Keluarga</label>
               <div class="form-check">
