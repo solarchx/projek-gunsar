@@ -379,8 +379,6 @@
             <h5 class="mb-0">Tindakan & Terapi</h5>
           </div>
           <div class="mb-3">
-            <label class="form-label">Rencana Terapi atau Tindakan</label>
-            <textarea class="form-control" name="terapi_tindakan" rows="3" placeholder="Rencana terapi atau tindakan untuk pasien..."></textarea>
           </div>
 
           <!-- Tombol -->

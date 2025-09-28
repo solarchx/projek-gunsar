@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekamMedisController;
@@ -37,6 +38,18 @@ Route::middleware('auth')->group(function () {
 Route::get('/dokterumum/HalamanDokter', function () {
     return view('dokterumum.HalamanDokter');
 });
+Route::get('/doktergigi/HalamanDokter', function () {
+    return view('doktergigi.HalamanDokter');
+});
+Route::get('/dokterumum/FormDiagnosa', function () {
+    return view('dokterumum.FormDiagnosa');
+});
+Route::get('/doktergigi/FormDiagnosa', function () {
+    return view('doktergigi.FormDiagnosa');
+});
+Route::get('/RekamMedisdetail', function () {
+    return view('RekamMedisdetail');
+});
 
 Route::get('/profil', function () {
     return view('profil');
@@ -55,10 +68,5 @@ Route::get('/profil', function () {
     return view('profil');
 });
 
-Route::resource('rekam-medis', RekamMedisController::class);
-Route::resource('resep', ResepController::class);
-
-Route::get('/resep/{id}/preview', [ResepController::class, 'preview'])->name('resep.preview');
-Route::get('/resep/{id}/download', [ResepController::class, 'download'])->name('resep.download');
 
 require __DIR__ . '/auth.php';
