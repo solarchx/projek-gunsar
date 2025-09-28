@@ -2,6 +2,7 @@
 @section('konten')
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,12 @@
       --secondary-color: #f8f9fa;
       --accent-color: #f0f7f8;
     }
-    
+
     body {
       background-color: #f4f6f9;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     .page-header {
       background: linear-gradient(135deg, var(--primary-color), #0d5966);
       color: white;
@@ -29,7 +30,7 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       margin-bottom: 2rem;
     }
-    
+
     .card {
       border: none;
       border-radius: 12px;
@@ -38,12 +39,12 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 1.5rem;
     }
-    
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
-    
+
     .card-header {
       background: var(--primary-color);
       color: white;
@@ -53,16 +54,16 @@
       display: flex;
       align-items: center;
     }
-    
+
     .card-header i {
       margin-right: 10px;
       font-size: 1.3rem;
     }
-    
+
     .card-body {
       padding: 1.5rem;
     }
-    
+
     .info-item {
       margin-bottom: 15px;
       display: flex;
@@ -70,11 +71,11 @@
       padding: 8px 0;
       border-bottom: 1px solid #f0f0f0;
     }
-    
+
     .info-item:last-child {
       border-bottom: none;
     }
-    
+
     .info-item i {
       font-size: 1.3rem;
       color: var(--primary-color);
@@ -82,12 +83,12 @@
       width: 25px;
       text-align: center;
     }
-    
+
     .info-item strong {
       color: #444;
       margin-right: 5px;
     }
-    
+
     .table th {
       background-color: var(--accent-color);
       color: var(--primary-color);
@@ -95,56 +96,61 @@
       font-weight: 600;
       padding: 12px 15px;
     }
-    
+
     .table td {
       padding: 12px 15px;
       vertical-align: middle;
     }
-    
+
     .btn-primary {
       background-color: var(--primary-color);
       border-color: var(--primary-color);
       padding: 0.5rem 1.5rem;
     }
-    
+
     .btn-primary:hover {
       background-color: #0d5966;
       border-color: #0d5966;
     }
-    
+
     .btn-success {
       padding: 0.5rem 1.5rem;
     }
-    
+
     .btn-warning {
       padding: 0.5rem 1.5rem;
     }
-    
+
     .badge-status {
       padding: 0.5rem 1rem;
       border-radius: 50px;
       font-weight: 500;
     }
-    
+
     @media print {
       body * {
         visibility: hidden;
       }
-      #printable-area, #printable-area * {
+
+      #printable-area,
+      #printable-area * {
         visibility: visible;
       }
+
       #printable-area {
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
       }
+
       .no-print {
         display: none !important;
       }
     }
   </style>
 </head>
+
 <body>
 
   <div class="container py-4" id="printable-area">
@@ -152,7 +158,7 @@
     <!-- Header -->
     <div class="page-header d-flex justify-content-between align-items-center">
       <h2 class="fw-bold mb-0"><i class="bi bi-file-medical"></i> Detail Rekam Medis Pasien</h2>
-      <a href="/RekamMedis" class="btn btn-light no-print"><i class="bi bi-arrow-left"></i> Kembali</a>
+      <a href="{{ route('rekam-medis.index') }}" class="btn btn-light no-print"><i class="bi bi-arrow-left"></i> Kembali</a>
     </div>
 
     <!-- Informasi Pasien -->
@@ -197,60 +203,71 @@
     <div class="card">
       <div class="card-header"><i class="bi bi-clipboard2-check"></i> Hasil Diagnosa</div>
       <div class="card-body">
-        <div class="info-item"><i class="bi bi-activity"></i> <strong>Penyakit:</strong> Demam</div>
-        <div class="info-item"><i class="bi bi-chat-dots"></i> <strong>Keluhan:</strong> Badan panas, pusing, menggigil</div>
-        <div class="info-item"><i class="bi bi-calendar-week"></i> <strong>Lama Sakit:</strong> 3 hari</div>
-        <div class="info-item"><i class="bi bi-capsule"></i> <strong>Obat Sebelum Periksa:</strong> Paracetamol 500mg</div>
-        <div class="info-item"><i class="bi bi-journal-text"></i> <strong>Catatan Dokter:</strong> Pasien disarankan istirahat yang cukup, konsumsi makanan bergizi, dan kontrol kembali jika demam tidak turun dalam 3 hari.</div>
+        <div class="info-item"><i class="bi bi-activity"></i> <strong>Penyakit:</strong> {{ $rekamMedis->penyakit->nama ?? 'Tidak diketahui' }}</div>
+        <div class="info-item"><i class="bi bi-chat-dots"></i> <strong>Keluhan:</strong> {{ $rekamMedis->keluhan }}</div>
+        <div class="info-item"><i class="bi bi-journal-medical"></i> <strong>Riwayat Penyakit:</strong>{{ $rekamMedis->riwayat_penyakit }}</div>
+        <div class="info-item"><i class="bi bi-activity"></i> <strong>Terapi atau Tindakan:</strong> {{ $rekamMedis->terapi_tindakan }}</div>
+        <div class="info-item"><i class="bi bi-journal-text"></i> <strong>Catatan Dokter:</strong> {{ $rekamMedis->catatan }} </div>
       </div>
     </div>
 
     <!-- Pemeriksaan Khusus -->
-    <div class="card">
+    <!-- <div class="card">
       <div class="card-header"><i class="bi bi-search-heart"></i> Pemeriksaan Khusus</div>
       <div class="card-body">
         <div class="info-item"><i class="bi bi-egg-fried"></i> <strong>Kondisi Gizi:</strong> Baik</div>
         <div class="info-item"><i class="bi bi-capsule"></i> <strong>Pemberian Vitamin:</strong> Vitamin C</div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Riwayat Resep Obat -->
     <div class="card">
-      <div class="card-header"><i class="bi bi-prescription2"></i> Riwayat Resep Obat</div>
+      <div class="card-header">
+        <i class="bi bi-prescription2"></i> Riwayat Resep Obat
+      </div>
       <div class="card-body">
+
         <div class="table-responsive">
           <table class="table table-hover align-middle">
             <thead class="table-light">
               <tr>
-                <th><i class="bi bi-capsule"></i> Nama Obat</th>
-                <th>Dosis</th>
-                <th>Frekuensi</th>
-                <th>Aturan Pakai</th>
-                <th>Keterangan</th>
+                <th><i class="bi bi-capsule me-2"></i> Nama Obat</th>
+                <th>Jumlah</th>
               </tr>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="info-item mb-2">
+                    <i class="bi bi-calendar-event"></i>
+                    <strong>Tanggal:</strong>
+                    {{ \Carbon\Carbon::parse($rekamMedis->resep->tanggal)->format('d-m-Y') }}
+                  </div>
+
+                  <div class="info-item">
+                    <i class="bi bi-beaker"></i>
+                    <strong>Obat Racikan:</strong>
+                    {{ $rekamMedis->resep->obat_racikan ?? '-' }}
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="info-item">
+                    <i class="bi bi-hand-thumbs-up "></i>
+                    <strong>Obat Rekomendasi:</strong>
+                    {{ $rekamMedis->resep->obat_rekomendasi ?? '-' }}
+                  </div>
+                </div>
+              </div>
+
             </thead>
             <tbody>
+              @foreach ($rekamMedis->resep->detailReseps as $detail)
               <tr>
-                <td><i class="bi bi-capsule me-2"></i> Paracetamol 500mg</td>
-                <td>1 tablet</td>
-                <td>3x sehari</td>
-                <td>Sesudah makan</td>
-                <td>Jika demam</td>
+                <td>
+                  {{ $detail->obat->nama_obat }}
+                </td>
+                <td>{{ $detail->jumlah }}</td>
               </tr>
-              <tr>
-                <td><i class="bi bi-capsule me-2"></i> Amoxicillin 500mg</td>
-                <td>1 kapsul</td>
-                <td>2x sehari</td>
-                <td>Sebelum makan</td>
-                <td>5 hari berturut-turut</td>
-              </tr>
-              <tr>
-                <td><i class="bi bi-capsule me-2"></i> Vitamin C 1000mg</td>
-                <td>1 tablet</td>
-                <td>1x sehari</td>
-                <td>Sesudah makan</td>
-                <td>Selama masa sakit</td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
@@ -290,21 +307,32 @@
     document.getElementById('downloadPDF').addEventListener('click', function() {
       // Konfigurasi elemen yang akan di-download
       const element = document.getElementById('printable-area');
-      
+
       // Konfigurasi html2pdf
       const opt = {
         margin: [5, 0, 5, 0],
         filename: 'rekam_medis_ahmad_fulan.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        image: {
+          type: 'jpeg',
+          quality: 0.98
+        },
+        html2canvas: {
+          scale: 2,
+          useCORS: true
+        },
+        jsPDF: {
+          unit: 'mm',
+          format: 'a4',
+          orientation: 'portrait'
+        }
       };
-      
+
       // Generate dan download PDF
       html2pdf().set(opt).from(element).save();
     });
   </script>
 </body>
+
 </html>
 
 

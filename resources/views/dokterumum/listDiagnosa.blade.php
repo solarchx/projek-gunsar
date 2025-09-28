@@ -1,5 +1,4 @@
 @extends('layoutdokter')
-
 @section('konten')
 <!DOCTYPE html>
 <html lang="id">
@@ -105,8 +104,18 @@
     }
   </style>
 </head>
+<div class="container mt-4">
+  <!-- Header -->
+  <!-- Tombol Tambah -->
+  <!-- <div class="mb-3 text-end">
+    <a href="{{ route('rekam-medis.create') }}"
+      class="btn text-white shadow-sm px-4 rounded-3"
+      style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);">
+      <i class="bi bi-plus-circle me-1"></i> Tambah Rekam Medis
+    </a>
+  </div> -->
 
-<body>
+  <!-- Search -->
   <div class="container mt-4">
     <!-- Header dengan gradient yang lebih aesthetic -->
     <div class="mb-4 p-4 rounded-4 shadow-sm text-white gradient-header">
@@ -138,14 +147,13 @@
           <div>
             <span class="badge rounded-pill px-3 py-2 text-white shadow-sm" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);">
               <i class="bi bi-people-fill me-1"></i>
-              <span id="patientCount">2</span> Pasien Ditemukan
+              <span id="patientCount">{{ $rekamMediss->count() }}</span> Pasien
             </span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Tabel Pasien dengan desain lebih aesthetic -->
+    <!-- Tabel Rekam Medis -->
     <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
       <div class="card-body p-0">
         <div class="table-responsive">
@@ -154,65 +162,43 @@
               <tr>
                 <th class="py-3" style="width: 60px;">No</th>
                 <th>NIK Pasien</th>
-                <th>Nama Pasien</th>
                 <th>NIP Dokter</th>
                 <th>Keluhan</th>
+                <th>Riwayat Penyakit</th>
                 <th>Penyakit</th>
+                <th>Catatan</th>
+                <th>Terapi</th>
                 <th style="width: 220px;">Aksi</th>
               </tr>
             </thead>
             <tbody id="riwayatTable">
               @forelse($rekamMediss as $index => $rekamMedis)
               <tr class="border-bottom">
-                <td class="fw-bold">
+                <td>
                   <span class="badge rounded-circle d-inline-flex align-items-center justify-content-center mx-auto number-badge">
                     {{ $loop->iteration }}
                   </span>
                 </td>
                 <td class="text-muted">{{ $rekamMedis->NIK_pasien }}</td>
-                <td class="patient-info-cell">
-                  <div class="d-flex align-items-center">
-                    <div class="rounded-circle p-2 me-2 teal-badge">
-                      <i class="bi bi-person-fill" style="color: #2caeb2;"></i>
-                    </div>
-                    <div>
-                      <div class="fw-semibold">Siti Aisyah</div>
-                      <small class="text-muted">Perempuan, 32 tahun</small>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span class="badge px-3 py-2 rounded-pill teal-badge">
-                    {{ $rekamMedis->NIP_dokter }}
-                  </span>
-                </td>
-                <td>
-                  <span class="badge px-3 py-2 rounded-pill teal-badge">
-                    {{ $rekamMedis->keluhan }}
-                  </span>
-                </td>
-                <td>
-                  <span class="badge px-3 py-2 rounded-pill teal-badge">
-                    {{ $rekamMedis->penyakit->nama ?? 'Tidak diketahui' }}
-                  </span>
-                </td>
+                <td class="text-muted">{{ $rekamMedis->NIP_dokter }}</td>
+                <td><span class="badge px-3 py-2 rounded-pill teal-badge">{{ $rekamMedis->keluhan }}</span></td>
+                <td><span class="badge px-3 py-2 rounded-pill teal-badge">{{ $rekamMedis->riwayat_penyakit }}</span></td>
+                <td><span class="badge px-3 py-2 rounded-pill teal-badge">{{ $rekamMedis->penyakit->nama ?? 'Tidak diketahui' }}</span></td>
+                <td>{{ $rekamMedis->catatan }}</td>
+                <td>{{ $rekamMedis->terapi_tindakan }}</td>
                 <td>
                   <div class="d-flex justify-content-center gap-1">
-                    <!-- <a href="{{ route('rekam-medis.edit', $rekamMedis->id) }}" class="btn btn-warning btn-sm">Edit</a> -->
+                    <a href="{{ route('rekam-medis.edit', $rekamMedis->id) }}"
+                      class="btn btn-warning btn-sm shadow-sm rounded-3">
+                      <i class="bi bi-pencil-square"></i> Edit
+                    </a>
                     <form action="{{ route('rekam-medis.destroy', $rekamMedis->id) }}" method="POST" style="display:inline;">
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>
+                      <button type="submit" class="btn btn-danger btn-sm shadow-sm rounded-3" onclick="return confirm('Yakin hapus?')">
+                        <i class="bi bi-trash"></i> Hapus
+                      </button>
                     </form>
-                    
-                    <!-- <button class="btn btn-sm text-white shadow-sm px-3 rounded-3 me-2" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);"
-                      data-bs-toggle="modal" data-bs-target="#detailModal2">
-                      <i class="bi bi-clipboard2-pulse me-1"></i> Screening
-                    </button> -->
-                    <a href="/rekam-medis/{{ $rekamMedis->id }}"
-                      class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
-                      <i class="bi bi-info-circle me-1"></i> Detail
-                    </a>
                   </div>
                 </td>
               </tr>
@@ -226,7 +212,6 @@
         </div>
       </div>
     </div>
-
     <!-- Pagination dengan desain lebih aesthetic -->
     <nav aria-label="Page navigation" class="mt-4">
       <ul class="pagination justify-content-center">
@@ -252,6 +237,7 @@
       </ul>
     </nav>
   </div>
+
   <script>
     document.getElementById("searchNIK").addEventListener("keyup", function() {
       let input = this.value.toLowerCase();
@@ -260,8 +246,7 @@
 
       rows.forEach(function(row) {
         let nik = row.cells[1].textContent.toLowerCase();
-        let name = row.cells[2].textContent.toLowerCase();
-        if (nik.includes(input) || name.includes(input) || input === "") {
+        if (nik.includes(input) || input === "") {
           row.style.display = "";
           visibleCount++;
         } else {
@@ -269,12 +254,10 @@
         }
       });
 
-      // Update patient count
       document.getElementById("patientCount").textContent = visibleCount;
     });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  @endsection
+  </body>
 
 </html>
-@endsection
