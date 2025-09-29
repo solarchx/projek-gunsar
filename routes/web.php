@@ -32,7 +32,7 @@ Route::prefix('dokterumum')->name('dokterumum.')->group(function () {
     Route::get('/FormDiagnosa', function () {
         return view('dokterumum.FormDiagnosa');
     })->name('FormDiagnosa');
-    
+
     Route::get('/RekamMedisdetail', function () {
         return view('dokterumum.RekamMedisdetail');
     })->name('RekamMedisdetail');
