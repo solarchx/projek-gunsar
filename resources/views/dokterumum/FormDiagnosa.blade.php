@@ -1,6 +1,7 @@
 @extends('layoutdokter')
 
 @section('konten')
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -38,6 +39,10 @@
     }
 
     h5 {
+      /* border-left: 4px solid #3fbbc0;
+      padding-left: 0.6rem;
+      margin-bottom: 1rem;
+      color: #3fbbc0; */
       border-left: 4px solid #28a745;
       padding-left: 0.8rem;
       margin-bottom: 1.2rem;
@@ -61,6 +66,8 @@
     }
 
     .btn-success {
+      /* background-color: #3fbbc0;
+      border-color: #3fbbc0; */
       background: linear-gradient(90deg, #3fbbc0, #35a8ac);
       border: none;
       border-radius: 12px;
@@ -73,6 +80,8 @@
     }
 
     .btn-success:hover {
+      /* background-color: #35a8ac;
+      border-color: #35a8ac; */
       background: linear-gradient(90deg, #35a8ac, #2c979a);
       transform: translateY(-2px);
       box-shadow: 0 6px 12px rgba(63, 187, 192, 0.4);
