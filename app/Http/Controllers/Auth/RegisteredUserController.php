@@ -33,6 +33,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'nik' => 'required|string|size:16|unique:users',
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'no_hp' => 'nullable|string|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'address' => 'nullable|string'
         ]);
@@ -41,6 +42,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'nik' => $request->nik,
             'email' => $request->email,
+            'no_hp' => $request->no_hp,
             'password' => Hash::make($request->password),
             'alamat_lengkap' => $request->address
         ]);

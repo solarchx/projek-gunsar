@@ -360,6 +360,17 @@
                                    placeholder="Masukkan email" required>
                         </div>
                     </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-input-group">
+                        <label for="no_hp" class="form-label">Nomor Handphone</label>
+                        <div class="form-input-group">
+                            <i class="fas fa-phone form-icon"></i>
+                            <input id="no_hp" type="numbber" name="no_hp" 
+                                   class="form-control" 
+                                   placeholder="Masukkan nomor handphone" required>
+                        </div>
+                    </div>
                     
                     <!-- Password -->
                     <div class="form-input-group">
