@@ -3,7 +3,7 @@
 @section('konten')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-5 border-bottom">
     <h1 class="h2" style="color: #3fbbc0;">Data Dokter</h1>
-</div>
+</div> 
 
 @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" style="border-left: 4px solid #3fbbc0;">
@@ -27,11 +27,11 @@
             <table class="table table-striped table-hover">
                 <thead style="background-color: #f8f9fa; color: #3fbbc0;">
                     <tr>
-                        <th style="border-top: none;">NIP</th>
-                        <th style="border-top: none;">Nama Dokter</th>
-                        <th style="border-top: none;">Jabatan</th>
-                        <th style="border-top: none;">Poli</th>
-                        <th style="border-top: none; width: 150px;">Aksi</th>
+                        <th>NIP</th>
+                        <th>Nama Dokter</th>
+                        <th>Jabatan</th>
+                        <th>Poli</th>
+                        <th width="150">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,20 +75,4 @@
         </div>
     </div>
 </div>
-
-<style>
-    .table th {
-        font-weight: 600;
-        border-bottom: 2px solid #3fbbc0;
-    }
-    .btn:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-        transition: all 0.3s ease;
-    }
-    .card {
-        border-radius: 10px;
-        overflow: hidden;
-    }
-</style>
 @endsection
