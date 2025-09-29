@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
+use App\Http\Controllers\DokterController;
 
 Route::get('/', function () {
     return view('index');
@@ -32,9 +33,7 @@ Route::middleware('auth')->group(function () {
     // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/profil', function () {
-    return view('profil');
-});
+Route::resource('dokter', DokterController::class);
 
 Route::get('/dashboard/screening', function () {
     return view('skrining');
