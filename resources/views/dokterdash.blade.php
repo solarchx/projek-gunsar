@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/dokter/JanjiTemu">
+                            <a class="nav-link" href="/JanjiTemu">
                                 <i class="fas fa-calendar-check me-2"></i>Janji Temu
                             </a>
                         </li>
@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dokter/RekamMedis">
+                            <a class="nav-link" href="RekamMedis">
                                 <i class="fas fa-file-medical me-2"></i>Rekam Medis
                             </a>
                         </li>

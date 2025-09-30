@@ -50,7 +50,7 @@
     <div class="col-xl-3 col-md-6 d-flex">
         <div class="item-trans position-relative shadow p-3 bg-body rounded">
             <div class="icon"><i class="fas fa-tooth icon"></i></div>
-            <h4><a href="/dokterumum/RekamMedis" class="h4 stretched-link">Riwayat Pemeriksaan</a></h4>
+            <h4><a href="/rekam-medis" class="h4 stretched-link">Riwayat Pemeriksaan</a></h4>
             <p>Senyum sehat dimulai dari perawatan gigi terbaik.</p>
         </div>
     </div>
@@ -64,7 +64,7 @@
     <div class="col-xl-3 col-md-6 d-flex">
         <div class="item-trans position-relative shadow p-3 bg-body rounded">
             <div class="icon"><i class="fas fa-plus icon"></i></div>
-            <h4><a href="/dokterumum/ResepObat" class="h4 stretched-link">Resep Obat</a></h4>
+            <h4><a href="/ResepObat" class="h4 stretched-link">Resep Obat</a></h4>
             <p>Obat terpercaya, layanan ramah, dan cepat.</p>
         </div>
     </div>

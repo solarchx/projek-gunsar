@@ -1,8 +1,10 @@
 @extends('layoutdokter')
 
 @section('konten')
+
 <!DOCTYPE html>
-<html lang="id">  
+<html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,76 +15,248 @@
     body {
       background-color: #f4f9f8;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
     }
+
     .header {
       background: linear-gradient(90deg, #6AD4DD, #4BBFBA);
       color: white;
       padding: 1rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+
     .card-form {
       background: white;
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
     }
+
     .form-label {
       font-weight: 600;
       color: #333;
     }
+
     h5 {
-      border-left: 4px solid #28a745;
+      /* border-left: 4px solid #3fbbc0;
       padding-left: 0.6rem;
       margin-bottom: 1rem;
+      color: #3fbbc0; */
+      border-left: 4px solid #28a745;
+      padding-left: 0.8rem;
+      margin-bottom: 1.2rem;
       color: #28a745;
+      font-weight: 600;
     }
-    textarea, input, select {
+
+    textarea,
+    input,
+    select {
       border-radius: 10px !important;
+      border: 1px solid #ced4da;
+      transition: all 0.3s;
     }
+
+    textarea:focus,
+    input:focus,
+    select:focus {
+      border-color: #6AD4DD;
+      box-shadow: 0 0 0 0.25rem rgba(106, 212, 221, 0.25);
+    }
+
     .btn-success {
-      background-color: #3fbbc0;
-      border-color: #3fbbc0;
+      /* background-color: #3fbbc0;
+      border-color: #3fbbc0; */
+      background: linear-gradient(90deg, #3fbbc0, #35a8ac);
+      border: none;
       border-radius: 12px;
       padding: 0.8rem;
       font-size: 1.1rem;
       font-weight: bold;
       color: white;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(63, 187, 192, 0.3);
     }
+
     .btn-success:hover {
-      background-color: #35a8ac;
-      border-color: #35a8ac;
+      /* background-color: #35a8ac;
+      border-color: #35a8ac; */
+      background: linear-gradient(90deg, #35a8ac, #2c979a);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(63, 187, 192, 0.4);
     }
+
     .btn-resep {
-      background-color: #6c757d;
-      border-color: #6c757d;
+      background: linear-gradient(90deg, #6c757d, #5a6268);
+      border: none;
       border-radius: 12px;
       padding: 0.8rem;
       font-size: 1.1rem;
       font-weight: bold;
       color: white;
+      transition: all 0.3s;
+      box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
     }
+
     .btn-resep:hover {
-      background-color: #5a6268;
-      border-color: #545b62;
+      background: linear-gradient(90deg, #5a6268, #495057);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(108, 117, 125, 0.4);
     }
+
     .action-buttons {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
     }
+
+    .rujukan-section {
+      background-color: #fef7e0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border-left: 4px solid #ffc107;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-check-input:checked {
+      background-color: #3fbbc0;
+      border-color: #3fbbc0;
+    }
+
+    .data-pasien-output {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+    }
+
+    .data-item {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .data-label {
+      font-weight: 600;
+      min-width: 160px;
+      color: #495057;
+      display: flex;
+      align-items: center;
+    }
+
+    .data-label i {
+      margin-right: 0.5rem;
+      color: #6AD4DD;
+      width: 20px;
+    }
+
+    .data-value {
+      color: #212529;
+      background-color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      flex-grow: 1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      color: #4BBFBA;
+      font-weight: 600;
+    }
+
+    .section-title i {
+      margin-right: 0.5rem;
+      background: linear-gradient(135deg, #6AD4DD, #4BBFBA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.4rem;
+    }
+
+    .vital-signs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .vital-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9ecef;
+      transition: transform 0.3s;
+    }
+
+    .vital-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .vital-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3fbbc0;
+      margin: 0.5rem 0;
+    }
+
+    .vital-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+      font-weight: 500;
+    }
+
+    .vital-unit {
+      font-size: 0.8rem;
+      color: #adb5bd;
+    }
+
+    @media (max-width: 768px) {
+      .data-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .data-label {
+        min-width: unset;
+        margin-bottom: 0.5rem;
+      }
+
+      .data-value {
+        width: 100%;
+      }
+
+      .vital-signs {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     @media (max-width: 576px) {
       .action-buttons {
         flex-direction: column;
       }
+
+      .vital-signs {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-
   <div class="d-flex flex-column min-vh-100">
-
     <!-- Header -->
     <div class="header d-flex justify-content-between align-items-center">
-      <h3 class="mb-0">🩺 Form Diagnosa Poli Umum</h3>
+      <h3 class="mb-0"><i class="fas fa-stethoscope me-2"></i> Form Diagnosa Poli Umum</h3>
       <a href="/ResepObat" class="btn btn-light">
         <i class="fas fa-prescription me-1"></i> Buat Resep
       </a>
@@ -91,102 +265,129 @@
     <!-- Body -->
     <div class="flex-grow-1 container py-4">
       <div class="card-form mx-auto">
+        <form class="w-100" method="POST" action="{{ route('rekam-medis.store') }}">
+          @csrf
 
-        <form class="w-100">
+          <input type="hidden" name="NIK_pasien" value="1234567890">
+          <input type="hidden" name="NIP_dokter" value="5555555555">
 
-          <!-- Pilih Penyakit -->
-          <div class="mb-3">
-            <label for="penyakit" class="form-label">Pilih Penyakit</label>
-            <select id="penyakit" class="form-select" required onchange="showExtraFields()">
-              <option value="">-- Pilih Penyakit --</option>
-              <option value="demam">Demam</option>
-              <option value="flu">Flu</option>
-              <option value="batuk">Batuk</option>
-              <option value="lainnya">Lainnya (Isi Manual)</option>
-              <option value="tambah">➕ Tambah Penyakit Baru</option>
-            </select>
+          <!-- Data Pasien (Output Only) -->
+          <div class="section-title">
+            <i class="fas fa-user-circle"></i>
+            <h5 class="mb-0">Data Pasien</h5>
           </div>
-
-          <!-- Input manual -->
-          <div class="mb-3 d-none" id="penyakitLainnya">
-            <label class="form-label">Nama Penyakit</label>
-            <input type="text" class="form-control" placeholder="Isi manual jika penyakit tidak ada di pilihan">
-          </div>
-
-          <!-- Tambah penyakit baru -->
-          <div class="mb-3 d-none" id="penyakitBaru">
-            <label class="form-label">Tambah Penyakit Baru</label>
-            <input type="text" class="form-control" placeholder="Masukkan nama penyakit baru">
+          <div class="data-pasien-output">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-user"></i> Nama Pasien:</span>
+                  <span class="data-value">Budi Santoso</span>
+                </div>
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-id-card"></i> No. Rekam Medis:</span>
+                  <span class="data-value">RM-2023-08765</span>
+                </div>
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-birthday-cake"></i> Usia:</span>
+                  <span class="data-value">42 tahun</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-venus-mars"></i> Jenis Kelamin:</span>
+                  <span class="data-value">Laki-laki</span>
+                </div>
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-calendar-day"></i> Tanggal Periksa:</span>
+                  <span class="data-value">12 November 2023</span>
+                </div>
+                <div class="data-item">
+                  <span class="data-label"><i class="fas fa-phone"></i> No. Telepon:</span>
+                  <span class="data-value">081234567890</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Keluhan -->
+          <div class="section-title">
+            <i class="fas fa-comment-medical"></i>
+            <h5 class="mb-0">Keluhan Pasien</h5>
+          </div>
           <div class="mb-3">
-            <label for="keluhan" class="form-label">Keluhan Pasien</label>
-            <textarea id="keluhan" class="form-control" rows="3" placeholder="Tuliskan keluhan pasien..."></textarea>
+            <label class="form-label">Keluhan Utama</label>
+            <textarea class="form-control" rows="2" name="keluhan" placeholder="Tuliskan keluhan utama pasien..."></textarea>
           </div>
 
-          <!-- Diagnosa umum -->
-          <h5>📝 Diagnosa Umum</h5>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Sudah Berapa Hari Sakit?</label>
-              <input type="number" class="form-control" placeholder="Contoh: 3">
-            </div>
-            <div class="col-md-6 mb-3">
-              <label class="form-label">Obat yang Sudah Dikonsumsi</label>
-              <input type="text" class="form-control" placeholder="Contoh: Paracetamol, Vitamin C">
-            </div>
+          <div class="mb-3">
+            <label class="form-label">Riwayat Penyakit</label>
+            <textarea class="form-control" rows="2" name="riwayat_penyakit" placeholder="Riwayat penyakit yang pernah diderita..."></textarea>
           </div>
 
-          <!-- Diagnosa Khusus -->
-          <div id="diagnosaDemam" class="d-none">
-            <h5>🌡️ Diagnosa Khusus Demam</h5>
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Suhu Badan</label>
-                <input type="text" class="form-control" placeholder="Contoh: 38°C">
-              </div>
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Asupan Gizi</label>
-                <input type="text" class="form-control" placeholder="cukup / kurang">
-              </div>
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Vitamin</label>
-                <input type="text" class="form-control" placeholder="sudah / belum">
-              </div>
-            </div>
+          <!-- Pemeriksaan Fisik (Output Only) -->
+          <div class="section-title">
+            <i class="fas fa-heartbeat"></i>
+            <h5 class="mb-0">Pemeriksaan Fisik</h5>
           </div>
-
-          <div id="diagnosaFlu" class="d-none">
-            <h5>🤧 Diagnosa Khusus Flu</h5>
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Pernapasan</label>
-                <input type="text" class="form-control" placeholder="Normal / Sesak">
+          <div class="data-pasien-output">
+            <div class="vital-signs">
+              <div class="vital-item">
+                <div class="vital-label">Suhu Tubuh</div>
+                <div class="vital-value">38.2<span class="vital-unit">°C</span></div>
+                <div class="vital-status">Demam</div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Lendir / Ingus</label>
-                <input type="text" class="form-control" placeholder="Bening / Kuning / Kental">
+              <div class="vital-item">
+                <div class="vital-label">Tekanan Darah</div>
+                <div class="vital-value">130/85<span class="vital-unit">mmHg</span></div>
+                <div class="vital-status">Pra-hipertensi</div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label class="form-label">Gejala Lain</label>
-                <input type="text" class="form-control" placeholder="Hidung tersumbat, pusing">
+              <div class="vital-item">
+                <div class="vital-label">Denyut Nadi</div>
+                <div class="vital-value">92<span class="vital-unit">x/menit</span></div>
+                <div class="vital-status">Normal</div>
+              </div>
+              <div class="vital-item">
+                <div class="vital-label">Laju Pernapasan</div>
+                <div class="vital-value">20<span class="vital-unit">x/menit</span></div>
+                <div class="vital-status">Normal</div>
               </div>
             </div>
           </div>
 
-          <div id="diagnosaBatuk" class="d-none">
-            <h5>😷 Diagnosa Khusus Batuk</h5>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label class="form-label">Jenis Batuk</label>
-                <input type="text" class="form-control" placeholder="Kering / Berdahak">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label class="form-label">Durasi Batuk</label>
-                <input type="text" class="form-control" placeholder="Contoh: 1 minggu">
-              </div>
-            </div>
+          <!-- Diagnosa -->
+          <div class="section-title">
+            <i class="fas fa-stethoscope"></i>
+            <h5 class="mb-0">Diagnosa</h5>
+          </div>
+          <div class="mb-3">
+            <label for="penyakit" class="form-label">Pilih Penyakit</label>
+            <select id="penyakit" name="id_penyakit" class="form-select" onchange="showDiagnosaLainnya()">
+              <option value="">-- Pilih Penyakit --</option>
+              @foreach ($penyakits->unique('id') as $penyakit)
+              <option value="{{ $penyakit->id }}">
+                {{ $penyakit->nama }}
+              </option>
+              @endforeach
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <div class="mb-3 d-none" id="diagnosaLainnya">
+            <label class="form-label">Diagnosa Lainnya</label>
+            <input type="text" name="penyakit_baru" class="form-control" placeholder="Tuliskan diagnosa lainnya">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Catatan</label>
+            <input type="text" name="catatan" class="form-control" placeholder="Catatan (jika ada)">
+          </div>
+
+          <!-- Tindakan & Terapi -->
+          <div class="section-title">
+            <i class="fas fa-pills"></i>
+            <h5 class="mb-0">Tindakan & Terapi</h5>
+          </div>
+          <div class="mb-3">
           </div>
 
           <!-- Tombol -->
@@ -194,41 +395,40 @@
             <button type="submit" class="btn btn-success flex-fill">
               <i class="fas fa-save me-1"></i> Simpan Diagnosa
             </button>
-            <a href="/ResepObat" class="btn btn-resep flex-fill">
-              <i class="fas fa-prescription me-1"></i> Simpan & Buat Resep
-            </a>
+            <button type="submit" class="btn btn-success flex-fill" name="action" value="buat_resep">
+              <i class="fas fa-save me-1"></i> Simpan Diagnosa dan Buat Resep
+            </button>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 
   <script>
-    function showExtraFields() {
-      let penyakit = document.getElementById("penyakit").value;
+    function showDiagnosaLainnya() {
+      const selectDiagnosa = document.querySelector('select[onchange="showDiagnosaLainnya()"]');
+      const diagnosaLainnya = document.getElementById('diagnosaLainnya');
 
-      document.getElementById("penyakitLainnya").classList.add("d-none");
-      document.getElementById("penyakitBaru").classList.add("d-none");
-      document.getElementById("diagnosaDemam").classList.add("d-none");
-      document.getElementById("diagnosaFlu").classList.add("d-none");
-      document.getElementById("diagnosaBatuk").classList.add("d-none");
-
-      if (penyakit === "lainnya") {
-        document.getElementById("penyakitLainnya").classList.remove("d-none");
-      } else if (penyakit === "tambah") {
-        document.getElementById("penyakitBaru").classList.remove("d-none");
-      } else if (penyakit === "demam") {
-        document.getElementById("diagnosaDemam").classList.remove("d-none");
-      } else if (penyakit === "flu") {
-        document.getElementById("diagnosaFlu").classList.remove("d-none");
-      } else if (penyakit === "batuk") {
-        document.getElementById("diagnosaBatuk").classList.remove("d-none");
+      if (selectDiagnosa.value === 'lainnya') {
+        diagnosaLainnya.classList.remove('d-none');
+      } else {
+        diagnosaLainnya.classList.add('d-none');
       }
     }
+
+    // Toggle form rujukan
+    // const perluRujukan = document.getElementById('perluRujukan');
+    // const formRujukan = document.getElementById('formRujukan');
+
+    // perluRujukan.addEventListener('change', function() {
+    //   if (this.checked) {
+    //     formRujukan.classList.remove('d-none');
+    //   } else {
+    //     formRujukan.classList.add('d-none');
+    //   }
+    // });
   </script>
-
 </body>
-</html>
 
+</html>
 @endsection
