@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PasienDashboardController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
@@ -29,6 +31,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard/pasien', [PasienDashboardController::class, 'index'])->name('pasien.dashboard');
+    Route::get('/dashboard/pasien/profil', [PasienDashboardController::class, 'profil'])->name('pasien.profil');
+    Route::get('/dashboard/pasien/jadwal', [PasienDashboardController::class, 'jadwal'])->name('pasien.jadwal');
+    Route::get('/dashboard/pasien/riwayat', [PasienDashboardController::class, 'riwayat'])->name('pasien.riwayat');
+    Route::get('/dashboard/pasien/daftar', [PasienDashboardController::class, 'pendaftaran'])->name('pasien.pendaftaran');
 });
 
 Route::get('/dokterumum/HalamanDokter', function () {
@@ -72,5 +82,13 @@ Route::get('/profil', function () {
     return view('profil');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard/pasien', [PasienDashboardController::class, 'index'])->name('pasien.dashboard');
+});
+
+// Route::get('/logout', function () {
+//     Auth::logout();
+//     return redirect('/login');
+// })->name('logout');
 
 require __DIR__.'/auth.php';

@@ -62,8 +62,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-cog me-2"></i>Pengaturan
+                            <a class="nav-link" href="test-db-detailed">
+                                <i class="fas fa-cog me-2"></i>DB Tester
                             </a>
                         </li>
                         <li class="nav-item">
