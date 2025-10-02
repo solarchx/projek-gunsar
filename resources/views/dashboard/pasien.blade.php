@@ -69,6 +69,7 @@
     <a href="{{ route('pasien.riwayat') }}"><i class="bi bi-clock-history me-2"></i> Riwayat</a>
     <a href="{{ route('pasien.profil') }}"><i class="bi bi-person-circle me-2"></i> Profil</a>
     <a href="{{ route('pasien.jadwal') }}"><i class="bi bi-calendar-check me-2"></i> Jadwal</a>
+    <a href="{{ route('pasien.jadwal') }}"><i class="bi bi-calendar-check me-2"></i> Pendaftaran</a>
     <form method="POST" action="{{ route('logout') }}">
       @csrf
       <button type="submit" class="btn w-100 text-start text-white" style="background:none; border:none; padding:12px 20px;">
