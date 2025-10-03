@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::create('rekam_medis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('NIK_pasien');
-            $table->unsignedBigInteger('NIP_dokter');
+            $table->string('NIK_pasien', 20);  
+            $table->foreignId('id_screening')
+                ->constrained('screenings')
+                ->onDelete('cascade'); 
+            $table->string('NIP_dokter', 20);  
             $table->string('keluhan');
             $table->string('riwayat_penyakit');
-            $table->foreignId('id_penyakit')->constrained('penyakits');
-            $table->string('catatan');
-            $table->string('terapi_tindakan');
+            $table->foreignId('id_penyakit')->constrained('penyakits'); 
+            $table->string('catatan')->nullable();
+            $table->string('terapi_tindakan')->nullable();
+
             $table->timestamps();
         });
     }

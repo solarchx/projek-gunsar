@@ -268,7 +268,8 @@
         <form class="w-100" method="POST" action="{{ route('rekam-medis.store') }}">
           @csrf
 
-          <input type="hidden" name="NIK_pasien" value="1234567890">
+          <input type="hidden" name="id_screening" value="{{ $id_screening ?? '' }}">
+          <input type="hidden" name="NIK_pasien" value="1234567891234567">
           <input type="hidden" name="NIP_dokter" value="5555555555">
 
           <!-- Data Pasien (Output Only) -->
@@ -329,30 +330,53 @@
             <i class="fas fa-heartbeat"></i>
             <h5 class="mb-0">Pemeriksaan Fisik</h5>
           </div>
+
           <div class="data-pasien-output">
             <div class="vital-signs">
               <div class="vital-item">
-                <div class="vital-label">Suhu Tubuh</div>
-                <div class="vital-value">38.2<span class="vital-unit">°C</span></div>
-                <div class="vital-status">Demam</div>
+                <div class="vital-label">Tinggi Badan</div>
+                <div class="vital-value">
+                  {{ $screening->tinggi_badan ?? '-' }}<span class="vital-unit">cm</span>
+                </div>
               </div>
+
+              <div class="vital-item">
+                <div class="vital-label">Berat Badan</div>
+                <div class="vital-value">
+                  {{ $screening->berat_badan ?? '-' }}<span class="vital-unit">kg</span>
+                </div>
+              </div>
+
+              <div class="vital-item">
+                <div class="vital-label">Suhu Badan</div>
+                <div class="vital-value">
+                  {{ $screening->suhu_badan ?? '-' }}<span class="vital-unit">°C</span>
+                </div>
+                <div class="vital-status">
+                  @if($screening && $screening->suhu_badan >= 37.5)
+                  Demam
+                  @else
+                  Normal
+                  @endif
+                </div>
+              </div>
+
               <div class="vital-item">
                 <div class="vital-label">Tekanan Darah</div>
-                <div class="vital-value">130/85<span class="vital-unit">mmHg</span></div>
-                <div class="vital-status">Pra-hipertensi</div>
+                <div class="vital-value">
+                  {{ $screening->tekanan_darah ?? '-' }}<span class="vital-unit">mmHg</span>
+                </div>
               </div>
+
               <div class="vital-item">
-                <div class="vital-label">Denyut Nadi</div>
-                <div class="vital-value">92<span class="vital-unit">x/menit</span></div>
-                <div class="vital-status">Normal</div>
-              </div>
-              <div class="vital-item">
-                <div class="vital-label">Laju Pernapasan</div>
-                <div class="vital-value">20<span class="vital-unit">x/menit</span></div>
-                <div class="vital-status">Normal</div>
+                <div class="vital-label">Tanggal Screening</div>
+                <div class="vital-value">
+                  <td>{{ \Carbon\Carbon::parse($screening->tanggal_screening)->format('d/m/Y') }}</td>
+                </div>
               </div>
             </div>
           </div>
+
 
           <!-- Diagnosa -->
           <div class="section-title">
@@ -387,7 +411,9 @@
             <i class="fas fa-pills"></i>
             <h5 class="mb-0">Tindakan & Terapi</h5>
           </div>
+
           <div class="mb-3">
+            <input type="text" name="terapi_tindakan" class="form-control" placeholder="Terapi atau tindakan yang diberikan">
           </div>
 
           <!-- Tombol -->

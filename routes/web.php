@@ -53,7 +53,7 @@ Route::resource('screening', ScreeningController::class);
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
-
+ 
 // Route untuk dokter
 Route::resource('rekam-medis', RekamMedisController::class);
 Route::resource('resep', ResepController::class);
@@ -78,5 +78,7 @@ Route::get('/dokter', function () {
     return view('dokter');
 });
 
+Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
+    ->name('rekamMedis');
 
 require __DIR__ . '/auth.php';

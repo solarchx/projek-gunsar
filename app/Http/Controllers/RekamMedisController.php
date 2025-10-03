@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RekamMedis;
 use App\Models\Penyakit;
 use App\Models\Resep;
+use App\Models\Screening;
 use Illuminate\Http\Request;
 
 class RekamMedisController extends Controller
@@ -19,14 +20,17 @@ class RekamMedisController extends Controller
     public function rekamMedis()
     {
         $rekamMediss = RekamMedis::get();
-        return view('RekamMedis', compact('rekamMediss'));
+        $screenings = Screening::get();
+        return view('RekamMedis', compact('rekamMediss', 'screenings'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $penyakits = Penyakit::all();
+        $id_screening = $request->query('id_screening');
+        $screening = $id_screening ? Screening::find($id_screening) : null;
 
-        return view('dokterumum.formDiagnosa', compact('penyakits'));
+        return view('dokterumum.formDiagnosa', compact('penyakits', 'id_screening', 'screening'));
     }
 
     public function store(Request $request)
@@ -45,6 +49,7 @@ class RekamMedisController extends Controller
 
         $rekamMedis = RekamMedis::create([
             'NIK_pasien'     => $request->NIK_pasien,
+            'id_screening' => $request->id_screening,
             'NIP_dokter'     => $request->NIP_dokter,
             'keluhan'         => $request->keluhan,
             'riwayat_penyakit'         => $request->riwayat_penyakit,
@@ -65,6 +70,7 @@ class RekamMedisController extends Controller
     public function edit($id)
     {
         $rekamMedis = RekamMedis::findOrFail($id);
+        $s = RekamMedis::findOrFail($id);
         $penyakits = Penyakit::all();
 
         return view('dokterumum.editDiagnosa', compact('rekamMedis', 'penyakits'));
@@ -72,8 +78,11 @@ class RekamMedisController extends Controller
 
     public function show($id)
     {
-        $rekamMedis = RekamMedis::with(['penyakit', 'resep.detailReseps.obat'])
-            ->findOrFail($id);
+        $rekamMedis = RekamMedis::with([
+            'penyakit',
+            'resep.detailReseps.obat',
+            'screening'
+        ])->findOrFail($id);
 
         return view('RekamMedisDetail', compact('rekamMedis'));
     }
@@ -96,6 +105,7 @@ class RekamMedisController extends Controller
         $rekamMedis = RekamMedis::findOrFail($id);
         $rekamMedis->update([
             'NIK_pasien'     => $request->NIK_pasien,
+            'id_screening' => $request->id_screening,
             'NIP_dokter'     => $request->NIP_dokter,
             'keluhan'         => $request->keluhan,
             'riwayat_penyakit'         => $request->riwayat_penyakit,
