@@ -55,11 +55,17 @@
                         <label for="poli_id" class="form-label" style="color: #3fbbc0; font-weight: 600;">Poli</label>
                         <select class="form-select @error('poli_id') is-invalid @enderror" id="poli_id" name="poli_id">
                             <option value="">Pilih Poli</option>
-                            @foreach($polis as $poli)
-                                <option value="{{ $poli->id }}" {{ old('poli_id') == $poli->id ? 'selected' : '' }}>
-                                    {{ $poli->nama_poli }}
+                            @php
+                                // Cari poli dengan nama "Poli Umum"
+                                $poliUmum = $polis->firstWhere('nama_poli', 'Poli Umum');
+                            @endphp
+                            @if($poliUmum)
+                                <option value="{{ $poliUmum->id }}" {{ old('poli_id') == $poliUmum->id ? 'selected' : '' }}>
+                                    {{ $poliUmum->nama_poli }}
                                 </option>
-                            @endforeach
+                            @else
+                                <option value="">Poli Umum tidak ditemukan</option>
+                            @endif
                         </select>
                         @error('poli_id')
                             <div class="invalid-feedback">{{ $message }}</div>
