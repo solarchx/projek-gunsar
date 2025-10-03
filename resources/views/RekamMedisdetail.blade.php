@@ -184,20 +184,39 @@
     <div class="card">
       <div class="card-header"><i class="bi bi-clipboard2-pulse"></i> Hasil Screening</div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="info-item"><i class="bi bi-heart-pulse"></i> <strong>Tekanan Darah:</strong> 120/80 mmHg</div>
-            <div class="info-item"><i class="bi bi-rulers"></i> <strong>Tinggi Badan:</strong> 170 cm</div>
-            <div class="info-item"><i class="bi bi-activity"></i> <strong>Berat Badan:</strong> 65 kg</div>
-          </div>
-          <div class="col-md-6">
-            <div class="info-item"><i class="bi bi-thermometer-half"></i> <strong>Suhu:</strong> 38.2°C </div>
-            <div class="info-item"><i class="bi bi-clipboard2-pulse"></i> <strong>IMT:</strong> 22.5</div>
-            <div class="info-item"><i class="bi bi-droplet"></i> <strong>Denyut Nadi:</strong> 88 bpm</div>
-          </div>
+      <div class="row">
+        <div class="col-md-6">
+        <div class="info-item">
+          <i class="bi bi-credit-card-2-front"></i>
+          <strong>NIK Pasien:</strong> {{ $rekamMedis->screening->NIK_pasien ?? '-' }}
+        </div>
+        <div class="info-item">
+          <i class="bi bi-rulers"></i>
+          <strong>Tinggi Badan:</strong> {{ $rekamMedis->screening->tinggi_badan ?? '-' }} cm
+        </div>
+        <div class="info-item">
+          <i class="bi bi-activity"></i>
+          <strong>Berat Badan:</strong> {{ $rekamMedis->screening->berat_badan ?? '-' }} kg
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="info-item">
+          <i class="bi bi-thermometer-half"></i>
+          <strong>Suhu Badan:</strong> {{ $rekamMedis->screening->suhu_badan ?? '-' }} °C
+        </div>
+        <div class="info-item">
+          <i class="bi bi-heart-pulse"></i>
+          <strong>Tekanan Darah:</strong> {{ $rekamMedis->screening->tekanan_darah ?? '-' }}
+        </div>
+        <div class="info-item">
+          <i class="bi bi-calendar-event"></i>
+          <strong>Tanggal Screening:</strong> {{ \Carbon\Carbon::parse($rekamMedis->screening->tanggal_screening)->format('d/m/Y') }}
+        </div>
         </div>
       </div>
+      </div>
     </div>
+
 
     <!-- Diagnosa -->
     <div class="card">
