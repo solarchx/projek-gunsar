@@ -8,6 +8,8 @@ use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\PasienDashboardController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
@@ -29,8 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/dokterumum/HalamanDokter', function () {
+    return view('dokterumum.HalamanDokter');
 });
 
 Route::resource('dokter', DokterController::class);
