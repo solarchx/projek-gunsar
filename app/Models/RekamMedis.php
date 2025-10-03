@@ -8,6 +8,7 @@ class RekamMedis extends Model
 {
     protected $fillable = [
         'NIK_pasien',
+        'id_screening',
         'NIP_dokter',
         'keluhan',
         'riwayat_penyakit',
@@ -24,5 +25,10 @@ class RekamMedis extends Model
     public function resep()
     {
         return $this->hasOne(Resep::class, 'id_rekam_medis');
+    }
+
+    public function screening()
+    {
+        return $this->belongsTo(Screening::class, 'id_screening');
     }
 }

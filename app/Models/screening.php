@@ -11,7 +11,7 @@ class Screening extends Model
     use HasFactory;
 
     protected $table = 'screenings';
-    
+
     protected $fillable = [
         'NIK_pasien',
         'tinggi_badan',
@@ -25,4 +25,9 @@ class Screening extends Model
         'tanggal_screening' => 'date',
         'suhu_badan' => 'decimal:1'
     ];
+
+    public function rekamMedis()
+    {
+        return $this->hasOne(RekamMedis::class, 'id_screening');
+    }
 }

@@ -3,14 +3,14 @@
 @section('konten')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-5 border-bottom">
     <h1 class="h2" style="color: #3fbbc0;">Data Screening</h1>
-</div> 
+</div>
 
 @if(session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" style="border-left: 4px solid #3fbbc0;">
-        <i class="fas fa-check-circle me-2" style="color: #3fbbc0;"></i>
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="border-left: 4px solid #3fbbc0;">
+    <i class="fas fa-check-circle me-2" style="color: #3fbbc0;"></i>
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 @endif
 
 <div class="card shadow border-0 mb-4" style="border-top: 3px solid #3fbbc0;">
@@ -50,9 +50,11 @@
                                 <a href="{{ route('screening.show', $screening->id) }}" class="btn btn-sm text-white" style="background-color: #3fbbc0;" title="Lihat Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
+
                                 <a href="{{ route('screening.edit', $screening->id) }}" class="btn btn-sm text-white" style="background-color: #6c757d;" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
+
                                 <form action="{{ route('screening.destroy', $screening->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
@@ -60,7 +62,24 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
+
+                                @if($screening->rekamMedis)
+                                <!-- <a href="{{ route('rekam-medis.show', $screening->rekamMedis->id) }}"
+                                    class="btn btn-sm text-white"
+                                    style="background-color: #0d6efd;"
+                                    title="Lihat Diagnosa">
+                                    <i class="fas fa-notes-medical"></i> Diagnosa
+                                </a> -->
+                                @else
+                                <a href="{{ route('rekam-medis.create', ['id_screening' => $screening->id]) }}"
+                                    class="btn btn-sm text-white"
+                                    style="background-color: #198754;"
+                                    title="Buat Form Diagnosa">
+                                    <i class="fas fa-notes-medical"></i> Buat Diagnosa
+                                </a>
+                                @endif
                             </div>
+
                         </td>
                     </tr>
                     @empty

@@ -130,7 +130,7 @@ class ResepController extends Controller
     {
         $resep = Resep::with('detailReseps.obat')->findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf', compact('resep'));
+        $pdf = Pdf::loadView('dokterumum.pdf', compact('resep'));
         return $pdf->stream('resep-' . $resep->NIK_pasien . '.pdf');
     }
 
