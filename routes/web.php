@@ -19,6 +19,10 @@ Route::get('/farmasi/obat', function () {
     return view('farmasi.obat');
 });
 
+Route::get('/pasien/daftar', function () {
+    return view('dashboard.daftar');
+})->name('pendaftaran');
+
 Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -28,9 +32,9 @@ Route::middleware('auth')->group(function () {
         return view('dokterdash');
     })->name('dashboard');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/dokterumum/HalamanDokter', function () {
@@ -53,6 +57,7 @@ Route::get('/profil', function () {
 // Route untuk dokter
 Route::resource('rekam-medis', RekamMedisController::class);
 Route::resource('resep', ResepController::class);
+Route::resource('pasien', PasienController::class);
 
 Route::get('/resep/{id}/preview', [ResepController::class, 'preview'])->name('resep.preview');
 Route::get('/resep/{id}/download', [ResepController::class, 'download'])->name('resep.download');
