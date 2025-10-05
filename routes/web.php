@@ -8,6 +8,8 @@ use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\PasienDashboardController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
@@ -49,8 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/dokterumum/HalamanDokter', function () {
+    return view('dokterumum.HalamanDokter');
 });
 
 Route::resource('dokter', DokterController::class);
@@ -65,7 +69,7 @@ Route::resource('screening', ScreeningController::class);
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
-
+ 
 // Route untuk dokter
 Route::resource('rekam-medis', RekamMedisController::class);
 Route::resource('resep', ResepController::class);
@@ -89,7 +93,7 @@ Route::get('/dokter', function () {
     return view('dokter');
 });
 
-// Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
-//     ->name('rekamMedis');
+Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
+    ->name('rekamMedis');
 
 require __DIR__ . '/auth.php';

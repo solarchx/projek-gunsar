@@ -10,8 +10,10 @@ class ScreeningController extends Controller
 {
     public function index()
     {
-        $screenings = Screening::orderBy('tanggal_screening', 'desc')->paginate(10);
-        
+        $screenings = Screening::with('rekamMedis')
+            ->orderBy('tanggal_screening', 'desc')
+            ->paginate(10);
+
         // Statistik untuk dashboard
         $totalScreenings = Screening::count();
         $todayScreenings = Screening::whereDate('tanggal_screening', Carbon::today())->count();
@@ -19,10 +21,10 @@ class ScreeningController extends Controller
         $averageTemp = Screening::avg('suhu_badan') ? number_format(Screening::avg('suhu_badan'), 1) : '0.0';
 
         return view('screening.index', compact(
-            'screenings', 
-            'totalScreenings', 
-            'todayScreenings', 
-            'uniquePatients', 
+            'screenings',
+            'totalScreenings',
+            'todayScreenings',
+            'uniquePatients',
             'averageTemp'
         ));
     }
@@ -72,7 +74,7 @@ class ScreeningController extends Controller
     public function update(Request $request, $id)
     {
         $screening = Screening::findOrFail($id);
-        
+
         $request->validate([
             'NIK_pasien' => 'required|digits:16',
             'tinggi_badan' => 'required|integer|min:50|max:250',
