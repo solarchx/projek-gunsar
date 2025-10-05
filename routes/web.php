@@ -17,6 +17,26 @@ Route::get('/farmasi/obat', function () {
     return view('farmasi.obat');
 });
 
+Route::get('/pasien/daftar', function () {
+    return view('pasien.daftar');
+});
+
+Route::get('/pasien/pasien', function () {
+    return view('pasien.pasien');
+});
+
+Route::get('/pasien/profil', function () {
+    return view('pasien.profil');
+});
+
+Route::get('/pasien/riwayat', function () {
+    return view('pasien.riwayat');
+});
+
+Route::get('/pasien/jadwal', function () {
+    return view('pasien.jadwal');
+});
+
 Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
