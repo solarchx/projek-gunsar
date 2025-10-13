@@ -9,14 +9,15 @@ use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienDashboardController;
+use App\Http\Controllers\FarmasiController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/farmasi/obat', function () {
-    return view('farmasi.obat');
+Route::get('/farmasi/index', function () {
+    return view('farmasi.index');
 });
 
 Route::get('/pasien/daftar', function () {
@@ -49,6 +50,8 @@ Route::get('/dashboard/screening', function () {
 
 Route::resource('screening', ScreeningController::class);
 
+Route::resource('farmasi', FarmasiController::class);
+
 // Route untuk profil pasien
 Route::get('/profil', function () {
     return view('profil');
@@ -80,5 +83,7 @@ Route::get('/dokter', function () {
 
 Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
     ->name('rekamMedis');
+
+
 
 require __DIR__ . '/auth.php';
