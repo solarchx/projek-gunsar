@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PoliSeeder::class,
         ]);
+        $this->call(DokterTenagaMedisSeeder::class);
 
         // User::factory(10)->create();
 
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-         $this->call([
+        $this->call([
             ObatSeeder::class,
             PenyakitSeeder::class,
         ]);

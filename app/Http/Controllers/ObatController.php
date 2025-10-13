@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Farmasi;
+namespace App\Http\Controllers\ObatController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

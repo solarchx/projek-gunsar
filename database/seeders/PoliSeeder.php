@@ -11,8 +11,6 @@ class PoliSeeder extends Seeder
     {
         $polis = [
             ['nama_poli' => 'Poli Umum'],
-            ['nama_poli' => 'Poli Anak'],
-            ['nama_poli' => 'Poli Gigi'],
         ];
 
         foreach ($polis as $poli) {

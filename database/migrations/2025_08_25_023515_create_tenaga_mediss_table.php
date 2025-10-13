@@ -8,18 +8,19 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('dokters', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tenaga_mediss', function (Blueprint $table) {
+             $table->id();
             $table->string('nip', 16)->unique();
-            $table->string('nama_dokter');
-            $table->string('jabatan_dokter');
-            $table->foreignId('poli_id')->constrained('polis')->onDelete('cascade');
+            $table->string('nama');
+            $table->string('jabatan');
+            $table->string('password');
+            $table->enum('role', ['dokter','perawat','farmasi','staff']);
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('dokters');
+        Schema::dropIfExists('tenaga_mediss');
     }
 };

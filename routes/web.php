@@ -10,6 +10,7 @@ use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienDashboardController;
 use Illuminate\Support\Facades\Auth;
+use App\Filament\CustomPages\Login;
 
 Route::get('/', function () {
     return view('index');
@@ -19,15 +20,24 @@ Route::get('/farmasi/obat', function () {
     return view('farmasi.obat');
 });
 
-Route::get('/dashboard', function () {
-    return view('dokterdash');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('tenaga-medis/login', [AuthController::class, 'showTenagaMedisLogin'])->name('tenaga-medis.login');
+Route::post('tenaga-medis/login', [AuthController::class, 'tenagaMedisLogin'])->name('tenaga-medis.login.post');
+Route::post('tenaga-medis/logout', [AuthController::class, 'tenagaMedisLogout'])->name('tenaga-medis.logout');
+
+Route::middleware('auth:tenaga_medis')->group(function () {
+    Route::get('dokter/dashboard', function () {
+        return view('dokterdash');
+    })->name('dokter.dashboard');
+    // Route::get('perawat/dashboard', function () {
+    //     return view('dokterdash'); // sesuaikan dengan view perawat
+    // })->name('perawat.dashboard');
+    // Route::get('farmasi/dashboard', function () {
+    //     return view('dokterdash'); // sesuaikan dengan view farmasi
+    // })->name('farmasi.dashboard');
+});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dokterdash');
-    })->name('dashboard');
-
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -49,7 +59,7 @@ Route::resource('screening', ScreeningController::class);
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
- 
+
 // Route untuk dokter
 Route::resource('rekam-medis', RekamMedisController::class);
 Route::resource('resep', ResepController::class);
