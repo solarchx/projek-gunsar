@@ -1,39 +1,82 @@
 <?php
 
-namespace App\Http\Controllers\Farmasi;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Obat;
 use Illuminate\Http\Request;
 
 class ObatController extends Controller
 {
     public function index()
     {
-        $dataObat = [
-            [
-                'no' => 1,
-                'nama' => 'Paracetamol',
-                'kategori' => 'Analgesik',
-                'stok' => 50,
-                'satuan' => 'Tablet',
-                'exp' => '2026-05-01',
-                'dosis' => '3x1',
-                'kandungan' => '500mg Paracetamol',
-                'kemasan' => 'Strip',
-            ],
-            [
-                'no' => 2,
-                'nama' => 'Amoxicillin',
-                'kategori' => 'Antibiotik',
-                'stok' => 30,
-                'satuan' => 'Kapsul',
-                'exp' => '2025-11-10',
-                'dosis' => '3x1',
-                'kandungan' => '500mg Amoxicillin',
-                'kemasan' => 'Botol',
-            ],
-        ];
+        $obat = Obat::paginate(10);
+        return view('obat.index', compact('obat'));
+    }
 
-        return view('farmasi.obat', compact('dataObat'));
+    public function create()
+    {
+        return view('obat.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'nama_obat' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'stok' => 'required|integer|min:0',
+            'tanggal_kadaluarsa' => 'required|date',
+            'harga_beli' => 'required|integer|min:0',
+            'harga_jual' => 'required|integer|min:0',
+            'deskripsi' => 'nullable|string',
+            'waktu_minum' => 'required|string|max:255',
+            'frekuensi' => 'required|string|max:255',
+            'dosis' => 'required|string|max:255',
+            'catatan_penting' => 'nullable|string'
+        ]);
+
+        Obat::create($validated);
+
+        return redirect()->route('obat.index')
+            ->with('success', 'Obat berhasil ditambahkan!');
+    }
+
+    public function show(Obat $obat)
+    {
+        return view('obat.show', compact('obat'));
+    }
+
+    public function edit(Obat $obat)
+    {
+        return view('obat.edit', compact('obat'));
+    }
+
+    public function update(Request $request, Obat $obat)
+    {
+        $validated = $request->validate([
+            'nama_obat' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'stok' => 'required|integer|min:0',
+            'tanggal_kadaluarsa' => 'required|date',
+            'harga_beli' => 'required|integer|min:0',
+            'harga_jual' => 'required|integer|min:0',
+            'deskripsi' => 'nullable|string',
+            'waktu_minum' => 'required|string|max:255',
+            'frekuensi' => 'required|string|max:255',
+            'dosis' => 'required|string|max:255',
+            'catatan_penting' => 'nullable|string'
+        ]);
+
+        $obat->update($validated);
+
+        return redirect()->route('obat.index')
+            ->with('success', 'Data obat berhasil diperbarui!');
+    }
+
+    public function destroy(Obat $obat)
+    {
+        $obat->delete();
+
+        return redirect()->route('obat.index')
+            ->with('success', 'Obat berhasil dihapus!');
     }
 }

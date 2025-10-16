@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,10 +10,8 @@ Route::get('/', function () {
 });
 
 Route::get('/farmasi/obat', function () {
-    return view('farmasi.obat');
+    return redirect()->route('obat.index');
 });
-
-
 
 // Route for dokter  
 Route::get('/dokter', function () {
@@ -73,4 +72,5 @@ Route::get('/profil', function () {
 });
 
 
+Route::resource('obat', ObatController::class);
 require __DIR__.'/auth.php';
