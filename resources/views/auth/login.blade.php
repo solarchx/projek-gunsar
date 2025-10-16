@@ -365,24 +365,6 @@
         <!-- RIGHT PANEL - LOGIN FORM -->
         <div class="form-panel">
             <div class="form-content">
-                <h2 class="login-title">Masuk ke Akun Anda</h2>
-                
-                <!-- SOCIAL ICONS -->
-                <div class="d-flex justify-content-center mb-3">
-                    <a href="#" class="social-icon fb mx-2" aria-label="Login with Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-icon google mx-2" aria-label="Login with Google">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="#" class="social-icon linkedin mx-2" aria-label="Login with LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-                
-                <div class="divider">
-                    <span>atau gunakan akun Anda</span>
-                </div>
                 
                 <!-- LOGIN FORM -->
                 <form id="loginForm" method="POST" action="{{ route('login') }}">

@@ -33,14 +33,14 @@
                         <li class="nav-item"><a class="nav-link" href="/ResepObat"><i class="fas fa-pills me-2"></i>Obat</a></li>
                         <li class="nav-item"><a class="nav-link" href="/RekamMedis"><i class="fas fa-file-medical me-2"></i>Rekam Medis</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-bar me-2"></i>Laporan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users me-2"></i>Staf</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/dokter"><i class="fas fa-users me-2"></i>Staf</a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cog me-2"></i>Pengaturan</a></li>
                     </ul>
                 </div>
             </div>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
             <!-- Main Content -->
-            <main class="col-md-5  9ms-sm-auto col-lg-11 px-md-4 py-4">
+            <main class="col-md-5 9ms-sm-auto col-lg-11 px-md-4 py-4">
                 @yield('konten')
             </main>
         </div>

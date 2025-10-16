@@ -1,14 +1,26 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\ObatController;
+=======
+use App\Http\Controllers\DashboardController;
+>>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RekamMedisController;
+use App\Http\Controllers\ResepController;
+use App\Http\Controllers\ScreeningController;
+use App\Http\Controllers\DokterController;
+use App\Http\Controllers\PasienDashboardController;
+use App\Http\Controllers\FarmasiController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
 });
 
+<<<<<<< HEAD
 Route::get('/farmasi/obat', function () {
     return redirect()->route('obat.index');
 });
@@ -17,60 +29,81 @@ Route::get('/farmasi/obat', function () {
 Route::get('/dokter', function () {
     return view('dokter');
 });
+=======
+Route::get('/farmasi/index', function () {
+    return view('farmasi.index');
+});
+
+Route::get('/pasien/daftar', function () {
+    return view('dashboard.daftar');
+})->name('pendaftaran');
+>>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 
 Route::get('/dashboard', function () {
     return view('dokterdash');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', function () {
+        return view('dokterdash');
+    })->name('dashboard');
+
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/dokterumum/HalamanDokter', function () {
     return view('dokterumum.HalamanDokter');
 });
-Route::get('/doktergigi/HalamanDokter', function () {
-    return view('doktergigi.HalamanDokter');
-});
-Route::get('/dokterumum/FormDiagnosa', function () {
-    return view('dokterumum.FormDiagnosa');
-});
-Route::get('/doktergigi/FormDiagnosa', function () {
-    return view('doktergigi.FormDiagnosa');
-});
-Route::get('/RekamMedisdetail', function () {
-    return view('RekamMedisdetail');
-});
 
+Route::resource('dokter', DokterController::class);
+
+Route::get('/dashboard/screening', function () {
+    return view('skrining');
+})->name('screening');
+
+Route::resource('screening', ScreeningController::class);
+
+Route::resource('farmasi', FarmasiController::class);
+
+// Route untuk profil pasien
 Route::get('/profil', function () {
     return view('profil');
-});
+})->name('profil');
+ 
+// Route untuk dokter
+Route::resource('rekam-medis', RekamMedisController::class);
+Route::resource('resep', ResepController::class);
+Route::resource('pasien', PasienController::class);
 
-Route::get('/RekamMedis', function () {
-    return view('RekamMedis');
-});
+Route::get('/resep/{id}/preview', [ResepController::class, 'preview'])->name('resep.preview');
+Route::get('/resep/{id}/download', [ResepController::class, 'download'])->name('resep.download');
 
 Route::get('/JanjiTemu', function () {
     return view('JanjiTemu');
 });
 
-Route::get('/ResepObat', function () {
-    return view('ResepObat');
+Route::get('/dokterumum/HalamanDokter', function () {
+    return view('dokterumum.HalamanDokter');
 });
 
-Route::get('/dashboard/screening', function () {
-    return view('skrining');
+Route::get('/RekamMedisdetail', function () {
+    return view('RekamMedisdetail');
 });
 
-// route for pasien
-Route::get('/profil', function () {
-    return view('profil');
+Route::get('/dokter', function () {
+    return view('dokter');
 });
 
+Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
+    ->name('rekamMedis');
 
+<<<<<<< HEAD
 Route::resource('obat', ObatController::class);
 require __DIR__.'/auth.php';
+=======
+
+
+require __DIR__ . '/auth.php';
+>>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85

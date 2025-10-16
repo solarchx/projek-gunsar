@@ -3,6 +3,7 @@
 @section('konten')
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,11 @@
       background-color: #f8fafc;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     .gradient-header {
       background: linear-gradient(135deg, #3fbbc0, #2caeb2, #1a9fa4);
     }
-    
+
     .table th {
       border-top: none;
       font-weight: 600;
@@ -28,74 +29,74 @@
       vertical-align: middle !important;
       text-align: center;
     }
-    
+
     .table td {
       border-color: #f0f0f0;
       vertical-align: middle !important;
       text-align: center;
     }
-    
+
     .patient-info-cell {
       text-align: left !important;
     }
-    
+
     .status-cell {
       text-align: left !important;
     }
-    
+
     .action-cell {
       text-align: center !important;
     }
-    
+
     .card {
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    
+
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
     }
-    
+
     .btn {
       border-radius: 8px;
       font-weight: 500;
       transition: all 0.2s;
     }
-    
+
     .btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
-    
+
     .page-link {
       color: #3fbbc0;
       transition: all 0.2s;
     }
-    
+
     .page-link:hover {
       color: #2caeb2;
       background-color: #f8fafc;
     }
-    
+
     .input-group:focus-within {
       box-shadow: 0 0 0 3px rgba(63, 187, 192, 0.25);
       border-radius: 12px;
     }
-    
+
     .modal-header {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .modal-footer {
       border-top: 1px solid #f0f0f0;
       background-color: #f8fafc;
     }
-    
+
     .teal-badge {
       background: rgba(63, 187, 192, 0.1);
       color: #3fbbc0;
     }
-    
+
     .number-badge {
       width: 30px;
       height: 30px;
@@ -104,6 +105,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container mt-4">
     <!-- Header dengan gradient yang lebih aesthetic -->
@@ -128,14 +130,14 @@
               <span class="input-group-text bg-white border-0">
                 <i class="bi bi-search text-muted"></i>
               </span>
-              <input type="text" id="searchNIK" 
-                     class="form-control border-0 shadow-none ps-0" 
-                     placeholder="Cari berdasarkan NIK atau nama pasien...">
+              <input type="text" id="searchNIK"
+                class="form-control border-0 shadow-none ps-0"
+                placeholder="Cari berdasarkan NIK atau nama pasien...">
             </div>
           </div>
           <div>
             <span class="badge rounded-pill px-3 py-2 text-white shadow-sm" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);">
-              <i class="bi bi-people-fill me-1"></i> 
+              <i class="bi bi-people-fill me-1"></i>
               <span id="patientCount">2</span> Pasien Ditemukan
             </span>
           </div>
@@ -151,20 +153,23 @@
             <thead class="text-white gradient-header">
               <tr>
                 <th class="py-3" style="width: 60px;">No</th>
-                <th>NIK</th>
+                <th>NIK Pasien</th>
                 <th>Nama Pasien</th>
-                <th>Poli</th>
+                <th>NIP Dokter</th>
+                <th>Keluhan</th>
+                <th>Penyakit</th>
                 <th style="width: 220px;">Aksi</th>
               </tr>
             </thead>
             <tbody id="riwayatTable">
+              @forelse($rekamMediss as $index => $rekamMedis)
               <tr class="border-bottom">
                 <td class="fw-bold">
                   <span class="badge rounded-circle d-inline-flex align-items-center justify-content-center mx-auto number-badge">
-                    1
+                    {{ $loop->iteration }}
                   </span>
                 </td>
-                <td class="text-muted">3212345678905678</td>
+                <td class="text-muted">{{ $rekamMedis->NIK_pasien }}</td>
                 <td class="patient-info-cell">
                   <div class="d-flex align-items-center">
                     <div class="rounded-circle p-2 me-2 teal-badge">
@@ -178,65 +183,50 @@
                 </td>
                 <td>
                   <span class="badge px-3 py-2 rounded-pill teal-badge">
-                    Poli Gigi
+                    {{ $rekamMedis->NIP_dokter }}
                   </span>
-                </td>
-                <td>
-                  <div class="d-flex justify-content-center">
-                    <button class="btn btn-sm text-white shadow-sm px-3 rounded-3 me-2" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);" 
-                            data-bs-toggle="modal" data-bs-target="#detailModal2">
-                      <i class="bi bi-clipboard2-pulse me-1"></i> Screening
-                    </button>
-                    <a href="/RekamMedisdetail" 
-                       class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
-                      <i class="bi bi-info-circle me-1"></i> Detail
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <!-- Data tambahan untuk contoh -->
-              <tr class="border-bottom">
-                <td class="fw-bold">
-                  <span class="badge rounded-circle d-inline-flex align-items-center justify-content-center mx-auto number-badge">
-                    2
-                  </span>
-                </td>
-                <td class="text-muted">3271234567890123</td>
-                <td class="patient-info-cell">
-                  <div class="d-flex align-items-center">
-                    <div class="rounded-circle p-2 me-2 teal-badge">
-                      <i class="bi bi-person-fill" style="color: #2caeb2;"></i>
-                    </div>
-                    <div>
-                      <div class="fw-semibold">Budi Santoso</div>
-                      <small class="text-muted">Laki-laki, 45 tahun</small>
-                    </div>
-                  </div>
                 </td>
                 <td>
                   <span class="badge px-3 py-2 rounded-pill teal-badge">
-                   Poli Umum
+                    {{ $rekamMedis->keluhan }}
                   </span>
                 </td>
                 <td>
-                  <div class="d-flex justify-content-center">
-                    <button class="btn btn-sm text-white shadow-sm px-3 rounded-3 me-2" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);" 
-                            data-bs-toggle="modal" data-bs-target="#detailModal2">
+                  <span class="badge px-3 py-2 rounded-pill teal-badge">
+                    {{ $rekamMedis->penyakit->nama ?? 'Tidak diketahui' }}
+                  </span>
+                </td>
+                <td>
+                  <div class="d-flex justify-content-center gap-1">
+                    <!-- <a href="{{ route('rekam-medis.edit', $rekamMedis->id) }}" class="btn btn-warning btn-sm">Edit</a> -->
+                    <form action="{{ route('rekam-medis.destroy', $rekamMedis->id) }}" method="POST" style="display:inline;">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>
+                    </form>
+                    
+                    <!-- <button class="btn btn-sm text-white shadow-sm px-3 rounded-3 me-2" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);"
+                      data-bs-toggle="modal" data-bs-target="#detailModal2">
                       <i class="bi bi-clipboard2-pulse me-1"></i> Screening
-                    </button>
-                    <a href="/ RekamMedisdetail" 
-                       class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
+                    </button> -->
+                    <a href="/rekam-medis/{{ $rekamMedis->id }}"
+                      class="btn btn-sm btn-light shadow-sm px-3 rounded-3 border">
                       <i class="bi bi-info-circle me-1"></i> Detail
                     </a>
                   </div>
                 </td>
               </tr>
+              @empty
+              <tr>
+                <td colspan="9" class="text-center">Belum ada rekam medis.</td>
+              </tr>
+              @endforelse
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    
+
     <!-- Pagination dengan desain lebih aesthetic -->
     <nav aria-label="Page navigation" class="mt-4">
       <ul class="pagination justify-content-center">
@@ -262,166 +252,13 @@
       </ul>
     </nav>
   </div>
-
-  <!-- Modal Screening Pasien dengan desain lebih aesthetic -->
-  <div class="modal fade" id="detailModal2" tabindex="-1" aria-labelledby="detailModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content shadow-lg border-0 rounded-4 overflow-hidden">
-        <div class="modal-header text-white gradient-header">
-          <h5 class="modal-title">
-            <i class="bi bi-clipboard2-pulse me-2"></i> Screening Awal - Siti Aisyah
-          </h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <div class="d-flex align-items-center mb-3">
-                <div class="rounded-circle p-2 me-3" style="background: rgba(255, 255, 255, 0.2);">
-                  <i class="bi bi-person text-white"></i>
-                </div>
-                <div>
-                  <small class="text-white-50">Nama Dokter</small>
-                  <div class="fw-semibold text-white">dr. Andi</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="d-flex align-items-center mb-3">
-                <div class="rounded-circle p-2 me-3" style="background: rgba(255, 255, 255, 0.2);">
-                  <i class="bi bi-building text-white"></i>
-                </div>
-                <div>
-                  <small class="text-white-50">Poli</small>
-                  <div class="fw-semibold text-white">Poli Umum</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-                <div class="card-body py-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <small class="text-muted">Tinggi Badan</small>
-                      <div class="fw-semibold" style="color: #3fbbc0;">170 cm</div>
-                    </div>
-                    <div class="rounded-circle p-2 teal-badge">
-                      <i class="bi bi-arrow-up" style="color: #3fbbc0;"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-                <div class="card-body py-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <small class="text-muted">Berat Badan</small>
-                      <div class="fw-semibold" style="color: #3fbbc0;">65 kg</div>
-                    </div>
-                    <div class="rounded-circle p-2 teal-badge">
-                      <i class="bi bi-speedometer2" style="color: #3fbbc0;"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-                <div class="card-body py-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <small class="text-muted">Suhu</small>
-                      <div class="fw-semibold" style="color: #3fbbc0;">37.2°C</div>
-                    </div>
-                    <div class="rounded-circle p-2 teal-badge">
-                      <i class="bi bi-thermometer-half" style="color: #3fbbc0;"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-                <div class="card-body py-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                      <small class="text-muted">Tensi</small>
-                      <div class="fw-semibold" style="color: #3fbbc0;">120/80 mmHg</div>
-                    </div>
-                    <div class="rounded-circle p-2 teal-badge">
-                      <i class="bi bi-heart-pulse" style="color: #3fbbc0;"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-            <div class="card-body py-3">
-              <div class="d-flex">
-                <div class="rounded-circle p-2 me-3 teal-badge">
-                  <i class="bi bi-exclamation-triangle" style="color: #3fbbc0;"></i>
-                </div>
-                <div>
-                  <small class="text-muted">Alergi</small>
-                  <div class="fw-semibold" style="color: #3fbbc0;">Tidak ada</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card border-0 mb-3 rounded-3 shadow-sm" style="background: #f8fafc;">
-            <div class="card-body py-3">
-              <div class="d-flex">
-                <div class="rounded-circle p-2 me-3 teal-badge">
-                  <i class="bi bi-chat-dots" style="color: #3fbbc0;"></i>
-                </div>
-                <div>
-                  <small class="text-muted">Keluhan</small>
-                  <div class="fw-semibold" style="color: #3fbbc0;">Badan pegal dan panas</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="card border-0 rounded-3 shadow-sm" style="background: #f8fafc;">
-            <div class="card-body py-3">
-              <div class="d-flex">
-                <div class="rounded-circle p-2 me-3 teal-badge">
-                  <i class="bi bi-hospital" style="color: #3fbbc0;"></i>
-                </div>
-                <div>
-                  <small class="text-muted">Rujukan</small>
-                  <div class="fw-semibold" style="color: #3fbbc0;">RSUD Cirebon</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-light rounded-3 px-4" data-bs-dismiss="modal">Tutup</button>
-          <button type="button" class="btn text-white rounded-3 px-4 shadow-sm" style="background: linear-gradient(135deg, #3fbbc0, #2caeb2);">Simpan Perubahan</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    document.getElementById("searchNIK").addEventListener("keyup", function () {
+    document.getElementById("searchNIK").addEventListener("keyup", function() {
       let input = this.value.toLowerCase();
       let rows = document.querySelectorAll("#riwayatTable tr");
       let visibleCount = 0;
 
-      rows.forEach(function (row) {
+      rows.forEach(function(row) {
         let nik = row.cells[1].textContent.toLowerCase();
         let name = row.cells[2].textContent.toLowerCase();
         if (nik.includes(input) || name.includes(input) || input === "") {
@@ -431,12 +268,13 @@
           row.style.display = "none";
         }
       });
-      
+
       // Update patient count
       document.getElementById("patientCount").textContent = visibleCount;
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 @endsection
