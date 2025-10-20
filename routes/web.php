@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\ObatController;
 =======
 use App\Http\Controllers\DashboardController;
