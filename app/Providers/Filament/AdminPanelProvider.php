@@ -29,11 +29,11 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->passwordReset()
-            ->sidebarCollapsibleOnDesktop()
+            // ->sidebarCollapsibleOnDesktop()
             ->brandLogo('/assets/img/logo.png')
             ->favicon('assets/img/favicon.png')
             ->brandLogoHeight('2.5rem')
-            ->sidebarWidth('12rem')
+            // ->sidebarWidth('12rem')
             ->colors([
                 'primary' => Color::Teal,
             ])
