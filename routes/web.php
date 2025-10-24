@@ -3,9 +3,7 @@
 use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\ObatController;
-=======
 use App\Http\Controllers\DashboardController;
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekamMedisController;
@@ -20,7 +18,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-<<<<<<< HEAD
 Route::get('/farmasi/obat', function () {
     return redirect()->route('obat.index');
 });
@@ -29,7 +26,6 @@ Route::get('/farmasi/obat', function () {
 Route::get('/dokter', function () {
     return view('dokter');
 });
-=======
 Route::get('/farmasi/index', function () {
     return view('farmasi.index');
 });
@@ -37,7 +33,6 @@ Route::get('/farmasi/index', function () {
 Route::get('/pasien/daftar', function () {
     return view('dashboard.daftar');
 })->name('pendaftaran');
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 
 Route::get('/dashboard', function () {
     return view('dokterdash');
@@ -99,11 +94,6 @@ Route::get('/dokter', function () {
 Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
     ->name('rekamMedis');
 
-<<<<<<< HEAD
+
 Route::resource('obat', ObatController::class);
 require __DIR__.'/auth.php';
-=======
-
-
-require __DIR__ . '/auth.php';
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85

@@ -6,30 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('obats', function (Blueprint $table) {
             $table->id();
             $table->string('nama_obat');
-            $table->enum('kategori', ['tablet', 'kapsul', 'sirup', 'salep', 'injeksi', 'cairan']);
+            $table->string('kategori');
             $table->integer('stok');
-            $table->enum('satuan', ['strip', 'botol', 'tube', 'vial', 'sachet', 'blister', 'box']);
-            $table->date('exp');
+            $table->date('tanggal_kadaluarsa');
+            $table->integer('harga_beli');
+            $table->integer('harga_jual');
+            $table->text('deskripsi')->nullable();
+            $table->string('waktu_minum');
+            $table->string('frekuensi');
             $table->string('dosis');
-            $table->string('kandungan');
-            $table->enum('kemasan', ['plastik', 'dus', 'botol', 'kaleng', 'tube']);
-            $table->enum('aturan_pemakaian', ['sebelum makan', 'sesudah makan']);
+            $table->text('catatan_penting')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('obats');
     }
