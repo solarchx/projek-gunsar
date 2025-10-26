@@ -16,8 +16,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route for dokter  
 Route::get('/dokter', function () {
     return view('dokter');
+});
+
+Route::get('/farmasi/obat', function () {
+    return redirect()->route('obat.index');
 });
 
 Route::get('/farmasi/index', function () {
@@ -87,4 +92,5 @@ Route::get('/dokter', function () {
 Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
     ->name('rekamMedis');
 
+Route::resource('obat', ObatController::class);
 require __DIR__.'/auth.php';
