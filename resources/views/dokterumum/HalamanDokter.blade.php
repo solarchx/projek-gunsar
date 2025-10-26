@@ -57,7 +57,7 @@
     <div class="col-xl-3 col-md-6 d-flex">
         <div class="item-trans position-relative shadow p-3 bg-body rounded">
             <div class="icon"><i class="fas fa-child icon"></i></div>
-            <h4><a href="" class="h4 stretched-link">Surat Rujukan</a></h4>
+            <h4><a href="/dokterumum/FormRujukan" class="h4 stretched-link">Surat Rujukan</a></h4>
             <p>Perawatan khusus untuk si kecil yang tumbuh sehat.</p>
         </div>
     </div>

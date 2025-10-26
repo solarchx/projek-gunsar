@@ -1,35 +1,25 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-<<<<<<< HEAD
 use App\Http\Controllers\ObatController;
-=======
 use App\Http\Controllers\DashboardController;
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FarmasiController;
+use App\Http\Controllers\PasienController;
 use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
-use App\Http\Controllers\PasienDashboardController;
-use App\Http\Controllers\FarmasiController;
-use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
 });
 
-<<<<<<< HEAD
-Route::get('/farmasi/obat', function () {
-    return redirect()->route('obat.index');
-});
-
-// Route for dokter  
 Route::get('/dokter', function () {
     return view('dokter');
 });
-=======
+
 Route::get('/farmasi/index', function () {
     return view('farmasi.index');
 });
@@ -37,7 +27,6 @@ Route::get('/farmasi/index', function () {
 Route::get('/pasien/daftar', function () {
     return view('dashboard.daftar');
 })->name('pendaftaran');
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
 
 Route::get('/dashboard', function () {
     return view('dokterdash');
@@ -47,10 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dokterdash');
     })->name('dashboard');
-
-    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/dokterumum/HalamanDokter', function () {
@@ -67,12 +52,11 @@ Route::resource('screening', ScreeningController::class);
 
 Route::resource('farmasi', FarmasiController::class);
 
-// Route untuk profil pasien
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
- 
-// Route untuk dokter
+
+Route::resource('obat', ObatController::class); 
 Route::resource('rekam-medis', RekamMedisController::class);
 Route::resource('resep', ResepController::class);
 Route::resource('pasien', PasienController::class);
@@ -88,6 +72,10 @@ Route::get('/dokterumum/HalamanDokter', function () {
     return view('dokterumum.HalamanDokter');
 });
 
+Route::get('/dokterumum/FormRujukan', function () {
+    return view('dokterumum.FormRujukan');
+});
+
 Route::get('/RekamMedisdetail', function () {
     return view('RekamMedisdetail');
 });
@@ -99,11 +87,4 @@ Route::get('/dokter', function () {
 Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
     ->name('rekamMedis');
 
-<<<<<<< HEAD
-Route::resource('obat', ObatController::class);
 require __DIR__.'/auth.php';
-=======
-
-
-require __DIR__ . '/auth.php';
->>>>>>> ebdc1064a7031eb8f01c5cc955429a1653f87c85
