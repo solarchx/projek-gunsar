@@ -3,12 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RekamMedisController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienDashboardController;
+use App\Http\Controllers\RujukanController;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -95,5 +96,15 @@ Route::get('/dokter', function () {
 
 Route::get('RekamMedis', [RekamMedisController::class, 'rekamMedis'])
     ->name('rekamMedis');
+
+Route::get('/dokterumum/FormRujukan', function () {
+    return view('dokterumum.FormRujukan');
+});
+
+// Rujukan routes
+Route::resource('rujukan', RujukanController::class);
+
+// Route to download PDF
+Route::get('rujukan/{rujukan}/download', [RujukanController::class, 'download'])->name('rujukan.download');
 
 require __DIR__ . '/auth.php';

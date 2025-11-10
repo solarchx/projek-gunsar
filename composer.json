@@ -9,7 +9,8 @@
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^3.1",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "dompdf/dompdf": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -20,6 +21,7 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^3.8",
+        "phpunit/phpunit": "^9.0",
         "pestphp/pest-plugin-laravel": "^3.2"
     },
     "autoload": {
