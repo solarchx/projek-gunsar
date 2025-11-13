@@ -9,7 +9,6 @@ class PasienDashboardController extends Controller
 {
     public function index()
     {
-        // hanya bisa diakses jika sudah login
         if (Auth::check()) {
             return view('dashboard.pasien');
         }

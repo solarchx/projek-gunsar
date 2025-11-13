@@ -89,6 +89,33 @@
                     <h1 class="h2">Dashboard Puskesmas</h1>
                 </div>
 
+                @if (session('error'))
+                <div style="
+        background-color: #ffdddd;
+        border-left: 5px solid #f44336;
+        padding: 10px;
+        margin: 10px 0;
+        color: #a94442;
+        border-radius: 5px;
+    ">
+                    {{ session('error') }}
+                </div>
+                @endif
+
+                @if (session('success'))
+                <div style="
+        background-color: #ddffdd;
+        border-left: 5px solid #4CAF50;
+        padding: 10px;
+        margin: 10px 0;
+        color: #2d662d;
+        border-radius: 5px;
+    ">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+
                 <section class="animated-services py-4">
                     <div class="row g-4">
                         <div class="col-xl-3 col-md-6 d-flex">

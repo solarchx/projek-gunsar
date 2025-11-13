@@ -10,6 +10,12 @@ class PasienController extends Controller
     {
         return view('dashboard.pasien');
     }
+
+    public function showPasienLogin()
+    {
+        return view('auth.login');
+    }
+
     public function riwayat()
     {
         $riwayats = [

@@ -45,7 +45,7 @@ class AuthController extends Controller
         //         return back()->withErrors(['nip' => 'Role tidak dikenali. Hubungi admin.']);
         // }
 
-        return redirect()->route('tenaga-medis.dashboard');
+        return redirect()->route('tenaga-medis.dashboard')->with('success', 'Selamat Datang!');
     }
 
     public function tenagaMedisLogout(Request $request)

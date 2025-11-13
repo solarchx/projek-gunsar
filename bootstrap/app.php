@@ -11,7 +11,22 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'prevent.cross.login' => \App\Http\Middleware\PreventCrossLogin::class,
+        ]);
+        
+        $middleware->redirectGuestsTo(function ($request) {
+            if ($request->is('tenaga-medis*')) {
+                return route('tenaga-medis.login');
+            }
+            if ($request->is('pasien*')) {
+                return route('pasien.login');
+            }
+            if ($request->is('admin*')) {
+                return route('filament.admin.auth.login');
+            }
+            return route('/'); 
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

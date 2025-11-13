@@ -26,12 +26,10 @@ class User extends Authenticatable implements FilamentUser
     // app/Models/User.php
     public function canAccessPanel(Panel $panel): bool
     {
-        return true; // ALLOW SEMUA DULU
+        return true; 
     }
 
-    // HAPUS method getFilamentHomeUrl()
 
-    // app/Providers/AppServiceProvider.php  
     public function register(): void
     {
         // COMMENT INI
